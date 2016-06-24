@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'web-console', group: :development
 gem 'sdoc',         '0.4.0', group: :doc
+gem 'bcrypt'
 
 group :development, :test do
   gem 'sqlite3'

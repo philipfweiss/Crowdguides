@@ -8,7 +8,7 @@ class StaticPagesControllerTest < ActionController::TestCase
 
   end
 
-  test "should get help" do
+  test "should get help!" do
     get :help
     assert_response :success
     assert_select "title", "Help | Ruby on Rails Tutorial Sample App"
