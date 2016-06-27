@@ -15,15 +15,19 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # Handle a successful save.
-
+      log_in(@user)
       redirect_to @user
+
       flash[:success] = "Welcome to the Sample App!"
 
     else
-      flash[:failure] = "Come on, you can do better than that...!"
+      flash[:failure] = "Please Try Again"
 
       render 'new'
     end
+  end
+
+  def destroy
   end
 
   private
