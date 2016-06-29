@@ -14,15 +14,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # Handle a successful save.
-      log_in(@user)
-      redirect_to @user
-
+      log_in @user
       flash[:success] = "Welcome to the Sample App!"
-
+      redirect_to @user
     else
-      flash[:failure] = "Please Try Again"
-
       render 'new'
     end
   end
@@ -32,6 +27,15 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      # Handle a successful update.
+    else
+      render 'edit'
+    end
   end
 
   private
