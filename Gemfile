@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails'
+gem 'faker'
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'uglifier'
