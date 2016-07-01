@@ -1,16 +1,16 @@
 <% provide(:title, 'Home') %>
 
-<div class="center jumbotron">
-  <h1>Hello, Niloufar</h1>
+<div class="center jumbotron" id="homepage_jumbo">
+    <h1 id="crowdguides_main">Crowdguides</h1>
 
-  <h2>
-    This is the home page for the
-    <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
+
+    <h2>
+      <div>
+          Using the crowd to improve documentation
+      </div>
+     <a href="https://xkcd.com/979/">Wisdom of the Ancients</a>
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "Create a new guide", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>

@@ -3,7 +3,7 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
+$gray-medium-light: #2f2f2f;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -75,6 +75,7 @@ p {
 
 #logo {
   float: left;
+  font-family: ‘Lucida Console’, Monaco, monospace;
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
@@ -207,4 +208,19 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+#homepage_jumbo {
+  border-style: solid;
+  border-width: 2px 10px 4px 20px;
+  background: url("pattern.svg");
+}
+
+#body_main {
+  background: url("pattern.svg");
+
+}
+
+#crowdguides_main {
+  font-family: ‘Lucida Console’, Monaco, monospace;
 }
