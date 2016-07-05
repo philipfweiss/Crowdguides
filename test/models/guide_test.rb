@@ -11,11 +11,7 @@ class GuideTest < ActiveSupport::TestCase
   test "should be valid" do
     assert @guide.valid?
   end
-
-  test "user id should be present" do
-    @guide.user_id = nil
-    assert_not @guide.valid?
-  end
+  
 
   test "title should be present" do
     @guide.title = "   "
