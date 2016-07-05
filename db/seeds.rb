@@ -1,10 +1,12 @@
-User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin:     true,
-             activated: true,
-             activated_at: Time.zone.now)
+
+User.create!(name:  "Philip Weiss",
+    email: "weissp68@stanford.edu",
+    password:              "upgrade",
+    password_confirmation: "upgrade",
+    admin:     true,
+    activated: true,
+    activated_at: Time.zone.now)
+
 
 99.times do |n|
   name  = Faker::Name.name
@@ -16,4 +18,12 @@ User.create!(name:  "Example User",
                password_confirmation: password,
                activated: true,
                activated_at: Time.zone.now)
+end
+
+if User.count > 6
+  users = User.order(:created_at).take(6)
+  50.times do
+    content = Faker::University.name + " Admissions Guide"
+    users.each { |user| user.guides.create!(title: content, description: "None!") }
+  end
 end
