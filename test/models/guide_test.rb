@@ -5,7 +5,7 @@ class GuideTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
     # This code is not idiomatically correct.
-    @guide = Guide.new(title: "Test Title", description: "Test Description", user_id: @user.id)
+    @guide = @user.guides.build(title: "Test Title", description: "Test Description")
   end
 
   test "should be valid" do
