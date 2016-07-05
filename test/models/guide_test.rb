@@ -11,7 +11,7 @@ class GuideTest < ActiveSupport::TestCase
   test "should be valid" do
     assert @guide.valid?
   end
-  
+
 
   test "title should be present" do
     @guide.title = "   "

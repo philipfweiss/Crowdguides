@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
  def setup
-   @user = User.new(name: "Philip Weiss", email: "weissp68@stanford.edu", password: "foo", password_confirmation: "bar")
+   @user = User.new(name: "Philip Weiss", email: "weissp68@stanford.edu", password: "foobar", password_confirmation: "foobar")
  end
 
   test "User is valid" do
@@ -38,4 +38,12 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "hellothere"
     assert @user.valid?
   end
+
+ test "associated guides should be destroyed" do
+   @user.save
+   @user.guides.create!(title: "title", description: "test d")
+   @user.destroy
+   assert (@user.guides.count < 1)
+
+ end
 end
