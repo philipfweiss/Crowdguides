@@ -1,0 +1,25 @@
+<%= form_for(@guide) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <div>
+        <div id="new_guide_title">Title:</div>
+        <%= f.text_field :title, placeholder: "Add a title...", class: :new_guide_title_edit %>
+    </div>
+
+    <div>
+        <div id="new_guide_description">Description</div>
+        <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
+    </div>
+
+
+    <div class="col-md-6 col-md-offset-6">
+        <input name="Preview" type="placeholder" value="Preview [Not working]" class="btn btn-sml btn-info" id="new_guide_add_space" />
+    </div>
+
+    <div class="col-md-6 col-md-offset-3">
+        <input name="commit" type="submit" value="Create" class="btn btn-lg btn-primary" />
+    </div>
+
+
+
+    <% end %>

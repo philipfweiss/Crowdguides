@@ -47,3 +47,37 @@ span.picture {
     border: 0;
   }
 }
+
+#new_guide_title {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#new_guide_description {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.new_guide_description_edit {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+
+}
+
+.new_guide_title_edit  {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+
+}
+
+#new_guide_add_space {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#new_guide_wrapper {
+  border: 1px solid black;
+  border-radius: 10px;
+}
