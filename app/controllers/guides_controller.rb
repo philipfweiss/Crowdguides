@@ -1,11 +1,20 @@
 class GuidesController < ApplicationController
   def new
-    @guide = current_user.guides.build
-    @user = current_user
+    if logged_in?
+      @guide = current_user.guides.build
+    else
+      @guide = Guide.new
+    end
+
+      @user = current_user
   end
 
   def create
-    @guide = current_user.guides.build(guides_params)
+    if logged_in?
+      @guide = current_user.guides.build(guides_params)
+    else
+      @guide = Guide.create(guides_params)
+    end
     if @guide.save
       flash[:success] = "Guide created!"
       redirect_to @user
