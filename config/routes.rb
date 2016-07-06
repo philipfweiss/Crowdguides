@@ -9,12 +9,13 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   get 'index' => 'users'
+  get 'new_guide' => 'guides#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
 
   root 'static_pages#home'
   resources :users
+  resources :guides
   resources :account_activations, only: [:edit]
-  resources :guides, only: [:create, :destroy, :update, :edit]
 end
