@@ -4,6 +4,8 @@ source 'https://rails-assets.org' do
 end
 
 gem 'rails'
+gem 'angular-rails-templates'
+gem 'bower-rails'
 gem 'faker'
 gem 'bootstrap-sass'
 gem 'sass-rails'
