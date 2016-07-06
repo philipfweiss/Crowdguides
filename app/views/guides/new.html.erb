@@ -1,8 +1,13 @@
 <% provide(:title, "New Guide") %>
 <div class="row" id="new_guide_wrapper">
-    <aside class="col-md-12">
+    <aside class="col-md-6">
         <section class="guide_form">
             <%= render 'shared/guide_form' %>
+        </section>
+    </aside>
+    <aside class="col-md-6">
+        <section class="guide_form">
+            <%= render 'shared/preview_form' %>
         </section>
     </aside>
 </div>

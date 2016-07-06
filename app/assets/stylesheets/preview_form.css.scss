@@ -1,0 +1,48 @@
+.preview_form {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.preview_form_centered {
+  word-wrap: break-word;
+  padding: 20px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.preview_form_description {
+  text-align: left;
+  word-wrap: break-word;
+  padding: 20px;
+}
+
+.preview_form_section {
+  text-align: left;
+  word-wrap: break-word;
+  font-size: 22px;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+
+
+.preview_form_section_task_header {
+  font-weight: bold;
+
+}
+
+.preview_form_section_task_title {
+  font-size: 14px;
+  padding-right: 30px;
+  padding-left: 20px;
+}
+
+.preview_form_section_task_description {
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.preview_form_section_task_wrapper {
+  padding-top: 10px;
+  font-size: 14px;
+}
