@@ -6,7 +6,9 @@
 
 .preview_form_centered {
   word-wrap: break-word;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
   font-size: 25px;
   font-weight: bold;
 }
@@ -34,7 +36,7 @@
 .preview_form_section_task_title {
   font-size: 14px;
   padding-right: 30px;
-  padding-left: 20px;
+  padding-left: 30px;
 }
 
 .preview_form_section_task_description {
@@ -44,5 +46,50 @@
 
 .preview_form_section_task_wrapper {
   padding-top: 10px;
+  padding-right: 20px;
   font-size: 14px;
+
+}
+
+.btn.btn-xs.dropdown-toggle.preview_form_button {
+  background-color: white;
+  border: 1px solid black;
+  float: left;
+  margin-top: 4px
+}
+
+.dropdown-menu.preview_form_menu {
+  float:right;
+  margin-top: 30px;
+  border: 1px solid black;
+  background: image-url("pattern.svg");
+  max-width:100%;
+}
+
+.dropdown-menu > li > .preview_form_blockers:hover {
+  background-color: #ff7f82;
+  background-image: none;
+  border-radius: 2px;
+  opacity: 0.8;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.dropdown-menu > li > .preview_form_warnings:hover {
+  background-color: #ffee9a;
+  background-image: none;
+  border-radius: 2px;
+  opacity: 0.8;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+}
+
+.dropdown-menu > li > .preview_form_tips:hover {
+  background-color: #cffdff;
+  background-image: none;
+  border-radius: 2px;
+  opacity: 0.8;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
