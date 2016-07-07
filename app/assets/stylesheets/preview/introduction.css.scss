@@ -4,19 +4,26 @@
   padding: 10px;
   border-radius: 10px;
   border: 1px solid black;
-  background: image-url("pattern.svg");
+}
+
+.intro_button_centered {
+  text-align: center;
+  border: 1px solid black;
 }
 
 .introduction_title {
   font-family: Verdana, Geneva, sans-serif;
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 10px;
+  font-size: 16px;
+  color: black;
 }
 
 .btn.btn-xs.dropdown-toggle.intro_form_button {
   background-color: white;
   border: 1px solid black;
+}
+
+.intro_dropdown {
+  display: inline-block;
 }
 
 .dropdown-menu.intro_form_menu {
@@ -55,45 +62,32 @@
   border-bottom: 1px solid black;
 }
 .preview_form {
+
   background-color: white;
   border-radius: 10px;
   border: 1px solid black;
 }
 
 .introduction_blocker {
-  color: #ff7f82;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .introduction_warning {
-  color: #ffee9a;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
 .introduction_tip {
-  color: #cffdff;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
 
 .introduction_section {
-  color: #c7ffc4;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
 
 .introduction_task {
-  color: #ffceac;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .introduction_advice {
-  color: #ffd1f9;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 
 .introduction_preview {
-  color: #cffdff;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }

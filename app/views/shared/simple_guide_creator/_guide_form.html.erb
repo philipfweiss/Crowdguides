@@ -1,26 +1,31 @@
-<%= form_for(@guide) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div>
-
-
-
+<div class="form_creator_no_scroll">
+    <%= form_for(@guide) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
         <div>
-            <div id="new_guide_title">Title:</div>
-            <%= f.text_field :title, placeholder: "Add a title...", class: :new_guide_title_edit %>
+            <div>
+                <%= render 'shared/simple_guide_creator/guide_creator_introduction'%>
+            </div>
+
+            <div>
+                <div id="new_guide_title">Title:</div>
+                <%= f.text_field :title, placeholder: "Add a title...", class: :new_guide_title_edit %>
+            </div>
+
+            <div>
+                <div id="new_guide_description">Description</div>
+                <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
+            </div>
+
+            <div>
+                <div id="new_guide_title">Add a Section</div>
+                <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
+            </div>
+
+            <button type="button" class="btn btn-sm btn-success new_section_button" id="new_section_button"> New Section </button>
+
+            <input name="commit" type="submit" value="Create" class="btn btn-lg btn-primary" />
+
         </div>
-
-        <div>
-            <div id="new_guide_description">Description</div>
-            <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
-        </div>
-
-        <button type="button" class="btn btn-sm btn-success new_section_button"> New Section </button>
-
-
-
-        <input name="commit" type="submit" value="Create" class="btn btn-lg btn-primary" />
-
-    </div>
-
     <% end %>
+</div>
 
