@@ -11,11 +11,21 @@
             <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
         </div>
 
+        <div>
+            <div id="new_guide_description">Section 1 Title:</div>
+            <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
+        </div>
 
-        <input name="Preview" type="placeholder" value="Preview [Not working]" class="btn btn-sml btn-info" id="new_guide_add_space" />
+        <div>
+            <button type="button" class="btn btn-sm btn-success new_section_button"> New Item </button>
+        </div>
+        <button type="button" class="btn btn-sm btn-success new_section_button"> New Section </button>
+
 
         <input name="commit" type="submit" value="Create" class="btn btn-lg btn-primary" />
+
     </div>
 
 
     <% end %>
+
