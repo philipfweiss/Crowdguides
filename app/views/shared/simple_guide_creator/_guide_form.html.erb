@@ -12,18 +12,16 @@
             </div>
 
             <div>
-                <div id="new_guide_description">Description</div>
+                <div id="new_guide_description">Description:</div>
                 <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
             </div>
 
-            <div>
-                <div id="new_guide_title">Add a Section</div>
-                <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
-            </div>
+            <button type="button" class="btn btn-sm btn-success new_section_button" id="new_section_button"> Add Section </button>
 
-            <button type="button" class="btn btn-sm btn-success new_section_button" id="new_section_button"> New Section </button>
 
             <input name="commit" type="submit" value="Create" class="btn btn-lg btn-primary" />
+
+
 
         </div>
     <% end %>
