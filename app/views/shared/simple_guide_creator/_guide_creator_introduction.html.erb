@@ -1,0 +1,46 @@
+
+<div>
+    <div>
+        Welcome to the guide creator! Here are a few things to know before you start.
+    </div>
+    <ul>
+        <li>Guides are composed of <b>Sections</b> and <b>Tasks</b>.
+            <ul>
+                <li>
+                    Use <b> Sections </b> to to seperate out parts of your guide.
+                </li>
+                <li>
+                    Use <b> Tasks </b> to describe your individual steps.
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            Each <b>Task</b> is automatically given an <b>Advice</b> button <%= render 'shared/simple_guide_creator/introduction_form_button' %> to help your users navigate the task.
+        </li>
+        <li> Each section of the advice button, <b>Blockers</b>, <b>Warnings</b>, and <b> Tips </b>, allow users to add new advice, read the advice that others have given previously, or upvote and downvote advice
+            based on quality.
+            <ul>
+                <li>
+                   <b>Blockers</b> are problems that could potentially prevent a user from continuing with the task.
+                </li>
+                <li>
+                    <b>Warnings</b> are less urgent problems, but could still potentially cause issues.
+                </li>
+                <li>
+                    <b>Tips</b> don't describe problems that could prevent a user from finishing a task, but instead
+                    provide helpful advice that could make the users experience during this step.
+                </li>
+
+
+            </ul>
+        </li>
+        <li>
+            The <b>Preview</b> window on the right shows what your guide will look as you create it. Hit the "publish" button
+            at the bottom to publish your guide. If you are a logged in user you will automatically become the owner of your guide
+            and you can edit/curate it at any time in the future.
+        </li>
+
+    </ul>
+
+</div>

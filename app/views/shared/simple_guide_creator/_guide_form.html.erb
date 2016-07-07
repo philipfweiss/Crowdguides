@@ -1,6 +1,9 @@
 <%= form_for(@guide) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div>
+
+
+
         <div>
             <div id="new_guide_title">Title:</div>
             <%= f.text_field :title, placeholder: "Add a title...", class: :new_guide_title_edit %>
@@ -11,21 +14,13 @@
             <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
         </div>
 
-        <div>
-            <div id="new_guide_description">Section 1 Title:</div>
-            <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
-        </div>
-
-        <div>
-            <button type="button" class="btn btn-sm btn-success new_section_button"> New Item </button>
-        </div>
         <button type="button" class="btn btn-sm btn-success new_section_button"> New Section </button>
+
 
 
         <input name="commit" type="submit" value="Create" class="btn btn-lg btn-primary" />
 
     </div>
-
 
     <% end %>
 
