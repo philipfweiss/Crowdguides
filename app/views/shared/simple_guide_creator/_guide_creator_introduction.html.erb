@@ -1,34 +1,33 @@
-
-<div>
-    <div>
+<div id="introduction_box">
+    <div class="introduction_title">
         Welcome to the guide creator! Here are a few things to know before you start.
     </div>
     <ul>
-        <li>Guides are composed of <b>Sections</b> and <b>Tasks</b>.
+        <li>Guides are composed of <b class="introduction_section">Sections</b> and <b class="introduction_task">Tasks</b>.
             <ul>
                 <li>
-                    Use <b> Sections </b> to to seperate out parts of your guide.
+                    Use <b class="introduction_section"> Sections </b> to to seperate out parts of your guide.
                 </li>
                 <li>
-                    Use <b> Tasks </b> to describe your individual steps.
+                    Use <b class="introduction_task"> Tasks </b> to describe your individual steps.
                 </li>
             </ul>
         </li>
 
         <li>
-            Each <b>Task</b> is automatically given an <b>Advice</b> button <%= render 'shared/simple_guide_creator/introduction_form_button' %> to help your users navigate the task.
+            Each <b class="introduction_task">Task</b> is automatically given an <b class="introduction_advice">Advice</b> button <%= render 'shared/simple_guide_creator/introduction_form_button' %> to help your users navigate the task.
         </li>
-        <li> Each section of the advice button, <b>Blockers</b>, <b>Warnings</b>, and <b> Tips </b>, allow users to add new advice, read the advice that others have given previously, or upvote and downvote advice
+        <li> Each section of the advice button, <b class="introduction_blocker">Blockers</b>, <b class="introduction_warning">Warnings</b>, and <b class="introduction_tip"> Tips </b>, allow users to add new advice, read the advice that others have given previously, or upvote and downvote advice
             based on quality.
             <ul>
                 <li>
-                   <b>Blockers</b> are problems that could potentially prevent a user from continuing with the task.
+                   <b class="introduction_blocker">Blockers</b> are problems that could potentially prevent a user from continuing with the task.
                 </li>
                 <li>
-                    <b>Warnings</b> are less urgent problems, but could still potentially cause issues.
+                    <b class="introduction_warning">Warnings</b> are less urgent problems, but could still potentially cause issues.
                 </li>
                 <li>
-                    <b>Tips</b> don't describe problems that could prevent a user from finishing a task, but instead
+                    <b class="introduction_tip">Tips</b> don't describe problems that could prevent a user from finishing a task, but instead
                     provide helpful advice that could make the users experience during this step.
                 </li>
 
