@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var Guide = {title: "", description: "", sections: []}; // The section array is [[1,[Tasks]], [2, [Tasks]]] etc...
+    var sectionNum = 0;
     var createSection;
     var deleteSection;
     var createTask;
@@ -10,25 +11,35 @@ $(document).ready(function() {
         createSection();
     });
 
-
     createSection = function() {
         // Find the max key in the sections array and add 1
-        var max = 0;
-        for(var section in Guide.sections) {
-            if(section[0] != null && section[0] > max) {
-                max = section[0];
-            }
-        }
+        var max = sectionNum++;
 
         // Then, create a section with that ID
-        Guide.sections.push([max+1, []]);
-        console.log("Shit!");
-        $('#new_section_button').before('<div>Hello!</div>');
+        console.log(max);
+        Guide.sections.push([max, []]);
+
+        var optionsButton = '<div class="dropdown intro_dropdown"> <button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"> <span class="caret"></span></button> <ul class="dropdown-menu intro_form_menu"> <li ><a class="option_button_delete" id="delete_section_' + max + '">Delete Section</a></li> </ul> </div>';
+        var addSection = '<div id="section_' + max + '"><div id="new_guide_title">New Section: '+ optionsButton + '</div>  <input class="new_guide_section_edit" placeholder="Section Title:"> <input class="new_guide_section_edit" placeholder="Section Description:"> <input class="new_guide_task_edit" placeholder="Add a Task..."> <button type="button" class="btn btn-xs btn-danger new_task_button" id="new_task_button"> Delete </button><div> <button type="button" class="btn btn-xs btn-success new_task_button" id="new_task_button"> + </button></div></div>';
+
+        deleteSection(max);
+
+        $('#new_section_button').before(addSection);
     };
 
 
     deleteSection = function(sectionId) {
-       // Delete a section given its section ID;
+        // Delete a section given its section ID;
+        $(document).on("click", "#delete_section_" + sectionId, function () {
+            for(var i = 0; i<Guide.sections.length; i++) {
+                if(Guide.sections[i][0] === sectionId) {
+                    Guide.sections.splice(i,1);
+                    console.log("Currently: " + Guide.sections.length);
+                }
+            }
+            $("#section_" + sectionId).remove();
+
+        });
     };
 
     createTask = function(sectionId) {
