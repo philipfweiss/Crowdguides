@@ -1,6 +1,8 @@
 $(document).ready(function() {
-    var Guide = {title: "", description: "", sections: []}; // Guide.sections = [{id: 1, tasks: [Tasks}, {id: 2, tasks: [Tasks]}]...
-                                                            // Task :: {}
+    var Guide = {title: "", description: "", sections: []}; // Guide :: {title: "", description: "", sections: []}
+                                                            // Sections :: {id: int, tasks: []}
+                                                            // Tasks :: {id: int, text: "", advice: []}
+                                                            // Advice :: {type: "", id: ""}
     var sectionNum = 0;
     var createSection;
     var deleteSection;
@@ -20,6 +22,7 @@ $(document).ready(function() {
         console.log(max);
         Guide.sections.push({id: max, tasks: []});
 
+        // Render the HTML for the section on to the page // Can be refactored?
         var optionsButton = '<div class="dropdown intro_dropdown"> <button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"> <span class="caret"></span></button> <ul class="dropdown-menu intro_form_menu"> <li ><a class="option_button_delete" id="delete_section_' + max + '">Delete Section</a></li> </ul> </div>';
         var addSection = '<div id="section_' + max + '"><div id="new_guide_title">New Section: '+ optionsButton + '</div>  <input class="new_guide_section_edit" placeholder="Section Title:"> <input class="new_guide_section_edit" placeholder="Section Description:"> <input class="new_guide_task_edit" placeholder="Add a Task..."> <button type="button" class="btn btn-xs btn-danger new_task_button" id="new_task_button"> Delete </button><div> <button type="button" class="btn btn-xs btn-success new_task_button" id="new_task_button"> + </button></div></div>';
         deleteSection(max); // Adds the onclick delete section handler
@@ -42,7 +45,26 @@ $(document).ready(function() {
     };
 
     createTask = function(sectionId) {
+        var taskMax = 0;
         // Finds the max task_id in the section and adds 1
+        for (var i = 0; i<Guide.sections.length; i++) {
+            if(Guide.sections[i].id === sectionId) {
+
+                // Check for the largest task and then make one value one higher.
+                for(var k = 0; k<Guide.sections[i].tasks.length; k++) {
+                    if(Guide.sections[i].tasks[k].id > taskMax ) {
+                        taskMax = Guide.sections[i].tasks[k].id+1;
+                    }
+                }
+
+                // Add a new task with the new Task Id that is higher than all previous
+                Guide.sections[i].tasks.push({id: taskMax, text: "", advice: []});
+
+                // Render the html for the task on to the page // Should be refactored?
+
+
+            }
+        }
     };
 
     deleteTask = function(sectionId, taskId) {
