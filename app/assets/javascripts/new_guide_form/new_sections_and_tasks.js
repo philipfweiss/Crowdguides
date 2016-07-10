@@ -1,8 +1,9 @@
+var Guide = {title: "Hello, World!", description: "", sections: []}; // Guide :: {title: "", description: "", sections: []}
+                                                        // Sections :: {id: int, title: "", description: "", tasks: []}
+                                                        // Tasks :: {id: int, text: "", advice: []}
+                                                        // Advice :: {type: "", id: ""}
+
 $(document).ready(function() {
-    var Guide = {title: "", description: "", sections: []}; // Guide :: {title: "", description: "", sections: []}
-                                                            // Sections :: {id: int, title: "", description: "", tasks: []}
-                                                            // Tasks :: {id: int, text: "", advice: []}
-                                                            // Advice :: {type: "", id: ""}
     var sectionNum = 0;
     var createSection;
     var deleteSection;
