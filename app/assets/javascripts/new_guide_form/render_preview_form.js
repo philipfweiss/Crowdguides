@@ -32,10 +32,18 @@ var renderGuide = function(divId, myGuide) {
         var sectionTitleText = '<div class="preview_form_section_task_header" id="section_' + sectionId + '_title' + '"></div>';
         thisSectionDiv.append(sectionTitleText);
         $('#section_'+ sectionId + '_title').text(section.title);
+
+        // Add Section Description
+        var sectionDescriptionText = '<div class="preview_form_section_description" id="section_' + sectionId + '_description' + '"></div>';
+        thisSectionDiv.append(sectionDescriptionText);
+        $('#section_'+ sectionId + '_description').text(section.description);
+
+
     };
 
     for(var i  = 0; i<myGuide.sections.length; i++) {
         renderSection(myGuide.sections[i]);
+
     }
 
 

@@ -34,7 +34,7 @@ $(document).ready(function() {
 
         // Render the HTML for the section on to the page // Can be refactored?
         var optionsButton = '<div class="dropdown intro_dropdown"> <button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"> <span class="caret"></span></button> <ul class="dropdown-menu intro_form_menu"> <li ><a class="option_button_delete" id="delete_section_' + max + '">Delete Section</a></li> </ul> </div>';
-        var addSection = '<div id="section_' + max + '"><div id="new_guide_title">New Section: '+ optionsButton + '</div>  <input class="new_guide_section_edit" id="new_guide_section_'+ max +'_title" placeholder="Section Title:"> <textarea placeholder="Section Description..." class="new_guide_section_edit" ></textarea> <div> <button type="button" class="btn btn-xs btn-success new_task_button" id="new_task_button_'+ max +'"> Add Task </button></div></div>';
+        var addSection = '<div id="section_' + max + '"><div id="new_guide_title">New Section: '+ optionsButton + '</div>  <input class="new_guide_section_edit" id="new_guide_section_'+ max +'_title" placeholder="Section Title:"> <textarea placeholder="Section Description..." class="new_guide_section_edit" id="new_guide_section_' + max + '_description' + '"></textarea> <div> <button type="button" class="btn btn-xs btn-success new_task_button" id="new_task_button_'+ max +'"> Add Task </button></div></div>';
         deleteSection(max); // Adds the onclick delete section handler
 
         // Bind section title to guide
@@ -42,6 +42,16 @@ $(document).ready(function() {
             for(var k = 0; k<Guide.sections.length; k++) {
                 if(Guide.sections[k].id === max) {
                     Guide.sections[k].title = $(this).val();
+                }
+            }
+        });
+
+        // Bind section description to guide
+        $(document).on("keyup", '#new_guide_section_' + max + '_description', function() {
+            console.log("??");
+            for(var k = 0; k<Guide.sections.length; k++) {
+                if(Guide.sections[k].id === max) {
+                    Guide.sections[k].description = $(this).val();
                 }
             }
         });
