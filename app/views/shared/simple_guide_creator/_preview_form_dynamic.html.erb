@@ -1,0 +1,38 @@
+<div class="preview_form">
+    <div class="padded_pills_for_sample">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#my_guide">My Guide</a></li>
+            <li><a data-toggle="tab" href="#sample_1">Sample 1</a></li>
+            <li><a data-toggle="tab" href="#sample_2">Sample 2</a></li>
+            <li><a data-toggle="tab" href="#sample_3">Sample 3</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="my_guide" class="tab-pane fade in active">
+                <h3>Add Content Here!</h3>
+            </div>
+            <div id="sample_1" class="tab-pane fade">
+                <%= render 'shared/simple_guide_creator/sample_form_1' %>
+
+            </div>
+            <div id="sample_2" class="tab-pane fade">
+                <%= render 'shared/simple_guide_creator/sample_form_1' %>
+            </div>
+            <div id="sample_3" class="tab-pane fade">
+                <%= render 'shared/simple_guide_creator/sample_form_1' %>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('input').on("keypress", function (e) {
+            if (e.keyCode == 13) {
+                return false;
+            }
+        });
+
+        $("#input_guide_form").keyup(function() {
+            renderGuide("#my_guide", Guide);
+        });
+    </script>
+</div>

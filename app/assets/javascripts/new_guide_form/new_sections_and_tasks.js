@@ -1,4 +1,4 @@
-var Guide = {title: "Hello, World!", description: "", sections: []}; // Guide :: {title: "", description: "", sections: []}
+var Guide = {title: "", description: "", sections: []}; // Guide :: {title: "", description: "", sections: []}
                                                         // Sections :: {id: int, title: "", description: "", tasks: []}
                                                         // Tasks :: {id: int, text: "", advice: []}
                                                         // Advice :: {type: "", id: ""}
@@ -9,6 +9,16 @@ $(document).ready(function() {
     var deleteSection;
     var createTask;
     var deleteTask;
+
+    // Set Guide.title and Guide.description to the correct divs
+    $('#new_guide_title_edit').keyup(function() {
+        Guide.title = $(this).val();
+    });
+
+    $('#new_guide_description_edit').keyup(function() {
+        Guide.description = $(this).val();
+    });
+
 
 
     $(document).on("click", "#new_section_button", function() {
@@ -24,8 +34,18 @@ $(document).ready(function() {
 
         // Render the HTML for the section on to the page // Can be refactored?
         var optionsButton = '<div class="dropdown intro_dropdown"> <button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"> <span class="caret"></span></button> <ul class="dropdown-menu intro_form_menu"> <li ><a class="option_button_delete" id="delete_section_' + max + '">Delete Section</a></li> </ul> </div>';
-        var addSection = '<div id="section_' + max + '"><div id="new_guide_title">New Section: '+ optionsButton + '</div>  <input class="new_guide_section_edit" placeholder="Section Title:"> <input class="new_guide_section_edit" placeholder="Section Description:"> <div> <button type="button" class="btn btn-xs btn-success new_task_button" id="new_task_button_'+ max +'"> Add Task </button></div></div>';
+        var addSection = '<div id="section_' + max + '"><div id="new_guide_title">New Section: '+ optionsButton + '</div>  <input class="new_guide_section_edit" id="new_guide_section_'+ max +'_title" placeholder="Section Title:"> <textarea placeholder="Section Description..." class="new_guide_section_edit" ></textarea> <div> <button type="button" class="btn btn-xs btn-success new_task_button" id="new_task_button_'+ max +'"> Add Task </button></div></div>';
         deleteSection(max); // Adds the onclick delete section handler
+
+        // Bind section title to guide
+        $(document).on("keyup", '#new_guide_section_' + max + '_title', function() {
+            for(var k = 0; k<Guide.sections.length; k++) {
+                if(Guide.sections[k].id === max) {
+                    Guide.sections[k].title = $(this).val();
+                }
+            }
+        });
+
 
         // Adds section when
         $('#new_section_button').before(addSection);
@@ -84,7 +104,6 @@ $(document).ready(function() {
             for(var i = 0; i<Guide.sections.length; i++) {
                 if(Guide.sections[i].id === sectionId) {
                     for(var j = 0; j<Guide.sections[i].tasks.length; j++) {
-                        console.log("hi: " + Guide.sections[i].tasks[j].id);
                         if(Guide.sections[i].tasks[j].id === taskId) {
                             // Delete task from guide object.
                             Guide.sections[i].tasks.splice(j,1);
@@ -93,7 +112,6 @@ $(document).ready(function() {
                             // Then, remove the HTML
                             $("#section_" + sectionId + "_task_" + taskId).remove();
 
-                            console.log("Current this section has: " + Guide.sections[i].tasks.length + " tasks");
 
                         }
                     }

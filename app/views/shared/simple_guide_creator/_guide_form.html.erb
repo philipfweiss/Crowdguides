@@ -3,18 +3,18 @@
 
     <%= form_for(@guide) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-        <div>
+        <div id="input_guide_form">
             <div>
                 <%= render 'shared/simple_guide_creator/guide_creator_introduction'%>
             </div>
             <div>
-                <div id="new_guide_title">Title:</div>
-                <input class="new_guide_title_edit" placeholder="Add a Title...">
+                <div id="new_guide_title">Guide Title:</div>
+                <input id="new_guide_title_edit" placeholder="Add a Title..."></input>
             </div>
 
             <div>
-                <div id="new_guide_description">Description:</div>
-                <input class="new_guide_description_edit" placeholder="Add a Description...">
+                <div id="new_guide_description">Guide Description:</div>
+                <textarea id="new_guide_description_edit" placeholder="Add a Description..."></textarea>
             </div>
 
 
