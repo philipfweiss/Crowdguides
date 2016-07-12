@@ -8,18 +8,34 @@
                 <%= render 'shared/simple_guide_creator/guide_creator_introduction'%>
             </div>
             <div>
-                <div id="new_guide_title">Guide Title:</div>
-                <input id="new_guide_title_edit" placeholder="Add a Title..."></input>
+                <!--<div id="new_guide_title">Guide Title:</div>-->
+                <!--<input id="new_guide_title_edit" placeholder="Add a Title...">-->
+                <%= f.label :title, id: "new_guide_title" %>
+                <%= f.text_field :title, placeholder: "Add a title...",  id: 'new_guide_title_edit' %>
             </div>
 
             <div>
-                <div id="new_guide_description">Guide Description:</div>
-                <textarea id="new_guide_description_edit" placeholder="Add a Description..."></textarea>
+                <!--<div id="new_guide_description">Guide Description:</div>-->
+                <!--<textarea id="new_guide_description_edit" placeholder="Add a Description..."></textarea>-->
+                <%= f.label :description, id: "new_guide_description" %>
+                <%= f.text_area :description, placeholder: "Add a description...",  id: 'new_guide_description_edit' %>
             </div>
 
 
-            <button type="button" class="btn btn-sm btn-success new_section_button" id="new_section_button"> Add Section </button>
-            <input name="commit" type="submit" value="Create" class="btn btn-lg btn-primary" />
+            <div>
+                <!--<div id="new_guide_description">Guide Description:</div>-->
+                <!--<textarea id="new_guide_description_edit" placeholder="Add a Description..."></textarea>-->
+                <%= f.label :content, id: "new_guide_description" %>
+                <%= f.text_area :content, placeholder: "Add Content!...",  id: 'new_guide_description_edit' %>
+            </div>
+
+
+            <!--<button type="button" class="btn btn-sm btn-success new_section_button" id="new_section_button"> Add Section </button>-->
+            <div>
+                <%= f.submit "Preview", class: "submit_preview_button btn btn-md btn-info"%>
+            </div>
+
+            <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
         </div>
     <% end %>
 </div>

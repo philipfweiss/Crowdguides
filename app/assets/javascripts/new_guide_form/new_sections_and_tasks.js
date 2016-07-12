@@ -1,3 +1,5 @@
+// Code currently unused
+
 var Guide = {title: "", description: "", sections: []}; // Guide :: {title: "", description: "", sections: []}
                                                         // Sections :: {id: int, title: "", description: "", tasks: []}
                                                         // Tasks :: {id: int, text: "", advice: []}

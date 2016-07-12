@@ -18,6 +18,12 @@ class GuidesController < ApplicationController
     else
       @guide = Guide.create(guides_params)
     end
+
+    if params[:commit] == "Preview"
+        puts "FUCK!"
+    end
+
+
     if @guide.save
       flash[:success] = "Guide created!"
       redirect_to @user

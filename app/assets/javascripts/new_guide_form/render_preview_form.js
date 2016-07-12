@@ -1,4 +1,8 @@
+// Code currently unused
+
 // This is called on keypress every time a key is pressed
+
+
 
 var renderGuide = function(divId, myGuide) {
 

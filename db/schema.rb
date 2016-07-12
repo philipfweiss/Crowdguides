@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705222441) do
+ActiveRecord::Schema.define(version: 20160712023559) do
 
   create_table "guides", force: :cascade do |t|
     t.text     "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160705222441) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.text     "content"
   end
 
   add_index "guides", ["user_id", "created_at"], name: "index_guides_on_user_id_and_created_at"
