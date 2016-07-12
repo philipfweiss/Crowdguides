@@ -1,0 +1,33 @@
+$(document).ready(function() {
+
+    // Render specialized markdown on preview button click,
+    $(document).on("click", '#content_preview', function() {
+        var title = '## ' + $("#new_guide_title_edit").val();
+        if(title.length < 4) {
+            title = "## Please Enter a Title \n";
+        }
+        title+= ' \n' + " ---------- " +'\n'; // Adds underline if there is a title
+
+        var description = '#### ' + $('#new_guide_description_edit').val() + '\n\n';
+        if(description.length < 8) {
+            description = "#### Please Enter a Description \n";
+        } else {
+            description+= ' \n' + " ---------- " +'\n'; // Adds underline if there is a description
+        }
+
+        var md_content = '\n ' + $("#new_guide_content_edit").val();
+        var re = /(\[\s?\-\s?])/gi; // Match all instances of [-]
+        var html_content = markdown.toHTML( title+description+md_content );
+      //  var buttonDiv = '<span style="display: inline"> ! <button style="display: inline"></button> </span>';
+        var buttonDiv = '<span class="dropdown intro_dropdown"><button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"><div class="caret"></div></button><ul class="dropdown-menu intro_form_menu"><li ><a class="intro_form_blockers" href="#">Blockers: 0</a></li><li ><a class="intro_form_warnings" href="#">Warnings: 0</a></li><li ><a class="intro_form_tips" href="#">Tips: 0</a></li></ul></span>';
+
+        html_content = html_content.replace(re, buttonDiv);
+        console.log(html_content);
+
+
+
+        $('#preview_tab').html(html_content);
+    });
+
+
+});

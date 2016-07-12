@@ -2,10 +2,14 @@
   white-space: pre-wrap;
 }
 
+.guide_form {
+  word-wrap: break-word;
+}
 .preview_form {
   background-color: white;
   border-radius: 10px;
   border: 1px solid black;
+  padding-bottom: 80px;
 }
 
 .form_creator_no_scroll {
