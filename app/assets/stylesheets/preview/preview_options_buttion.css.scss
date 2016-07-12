@@ -1,0 +1,45 @@
+
+.dropdown-menu > li > .option_button_delete:hover {
+  background-color: #ff7f82;
+  background-image: none;
+  border-radius: 2px;
+  opacity: 0.8;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.dropdown-menu > li > .option_button_add:hover {
+  background-color: #d4ffda;
+  background-image: none;
+  border-radius: 2px;
+  opacity: 0.8;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+
+.dropdown-menu.option_button_menu {
+  float:right;
+  margin: -2px;
+  border: 1px solid black;
+  background: image-url("pattern.svg");
+  max-width:100%;
+}
+
+.dropdown-menu.task_option_button_menu {
+  float:right;
+  border: 1px solid black;
+  background: image-url("pattern.svg");
+  max-width:100%;
+}
+
+
+
+.option_button_dropdown {
+  display: inline-block;
+}
+
+.btn.btn-xs.dropdown-toggle.options_button {
+  background-color: white;
+  border: 1px solid black;
+}
