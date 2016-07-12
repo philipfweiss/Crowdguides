@@ -1,7 +1,5 @@
 $(document).ready(function() {
-
-    // Render specialized markdown on preview button click,
-    $(document).on("click", '#content_preview', function() {
+    var renderGuide = function() {
         var title = '## ' + $("#new_guide_title_edit").val();
         if(title.length < 4) {
             title = "## Please Enter a Title \n";
@@ -16,7 +14,7 @@ $(document).ready(function() {
 
         var md_content = '\n' + $("#new_guide_content_edit").val();
 
-        var re = /(\[\s?\-\s?])/gi; // Match all instances of [-]
+        var re = /(\[\s?\d{1,10}\s?])/gi; // Match all instances of [-]
         // var re = /(!@)/gi; // Match all instances of [-]
         var buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="#">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="#">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="#">Tips: 0</a></li> </ul>';
         var buttonDiv = '<b><div class="dropdown intro_dropdown"><button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"><span class="caret"></span></button>' + buttonContents + '</span></b>';
@@ -29,7 +27,11 @@ $(document).ready(function() {
 
 
         $('#preview_tab').html(html_content);
-    });
+    };
+
+    // Render specialized markdown on preview button click,
+    $(document).on("click", '#content_preview', renderGuide);
+
 
 
 });
