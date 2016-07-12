@@ -6,14 +6,10 @@ $(document).ready(function() {
         if(title.length < 4) {
             title = "## Please Enter a Title \n";
         }
-        title+= ' \n' + " ---------- " +'\n'; // Adds underline if there is a title
+        title+= '\n';
 
 
         var description = '#### ' + $('#new_guide_description_edit').val() + '\n\n';
-
-        if(description.length < 8) {
-            description = "#### Please Enter a Description \n ";
-        }
 
         description+= ' \n' + " ---------- " +'\n'; // Adds underline if there is a title
 
@@ -27,9 +23,6 @@ $(document).ready(function() {
 
         var html_content = title + description + md_content;
         html_content = markdown.toHTML( html_content );
-        html_content = html_content.replace(re, buttonDiv);
-
-
         html_content = html_content.replace(re, buttonDiv);
         console.log(html_content);
 
