@@ -11,14 +11,21 @@
 #new_guide_description_edit {
     border-radius: 10px;
     border: 1px solid black;
-    padding: 10px;
+    padding: 5px;
 
+}
+
+#new_guide_content_edit {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  height: 300px;
 }
 
 #new_guide_title_edit  {
     border-radius: 10px;
     border: 1px solid black;
-    padding: 10px;
+    padding: 5px;
 
 }
 
@@ -35,6 +42,7 @@
   width: 60%;
 }
 
+
 #new_guide_add_space {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -44,3 +52,4 @@
     border: 1px solid black;
     background-color: image-url("pattern.svg");
 }
+

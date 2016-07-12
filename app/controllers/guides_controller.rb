@@ -18,12 +18,6 @@ class GuidesController < ApplicationController
     else
       @guide = Guide.create(guides_params)
     end
-
-    if params[:commit] == "Preview"
-        puts "FUCK!"
-    end
-
-
     if @guide.save
       flash[:success] = "Guide created!"
       redirect_to @user
@@ -40,10 +34,6 @@ class GuidesController < ApplicationController
 
     def guides_params
       params.require(:guide).permit(:title, :description)
-    end
-
-    def renderMarkdown(text, renderer)
-
     end
 
 end
