@@ -8,18 +8,27 @@ $(document).ready(function() {
         }
         title+= ' \n' + " ---------- " +'\n'; // Adds underline if there is a title
 
+
         var description = '#### ' + $('#new_guide_description_edit').val() + '\n\n';
+
         if(description.length < 8) {
-            description = "#### Please Enter a Description \n";
-        } else {
-            description+= ' \n' + " ---------- " +'\n'; // Adds underline if there is a description
+            description = "#### Please Enter a Description \n ";
         }
 
-        var md_content = '\n ' + $("#new_guide_content_edit").val();
+        description+= ' \n' + " ---------- " +'\n'; // Adds underline if there is a title
+
+
+        var md_content = '\n' + $("#new_guide_content_edit").val();
+
         var re = /(\[\s?\-\s?])/gi; // Match all instances of [-]
-        var html_content = markdown.toHTML( title+description+md_content );
-      //  var buttonDiv = '<span style="display: inline"> ! <button style="display: inline"></button> </span>';
-        var buttonDiv = '<span class="dropdown intro_dropdown"><button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"><div class="caret"></div></button><ul class="dropdown-menu intro_form_menu"><li ><a class="intro_form_blockers" href="#">Blockers: 0</a></li><li ><a class="intro_form_warnings" href="#">Warnings: 0</a></li><li ><a class="intro_form_tips" href="#">Tips: 0</a></li></ul></span>';
+        // var re = /(!@)/gi; // Match all instances of [-]
+        var buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="#">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="#">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="#">Tips: 0</a></li> </ul>';
+        var buttonDiv = '<b><div class="dropdown intro_dropdown"><button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"><span class="caret"></span></button>' + buttonContents + '</span></b>';
+
+        var html_content = title + description + md_content;
+        html_content = markdown.toHTML( html_content );
+        html_content = html_content.replace(re, buttonDiv);
+
 
         html_content = html_content.replace(re, buttonDiv);
         console.log(html_content);
