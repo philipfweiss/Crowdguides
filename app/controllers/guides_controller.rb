@@ -5,8 +5,11 @@ class GuidesController < ApplicationController
     else
       @guide = Guide.new
     end
-
       @user = current_user
+
+
+
+
   end
 
   def create
@@ -31,6 +34,10 @@ class GuidesController < ApplicationController
 
     def guides_params
       params.require(:guide).permit(:title, :description)
+    end
+
+    def renderMarkdown(text, renderer)
+
     end
 
 end

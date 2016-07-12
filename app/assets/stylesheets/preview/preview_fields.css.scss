@@ -1,25 +1,38 @@
 #new_guide_title {
-    font-weight: bold;
-    font-size: 25px;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 #new_guide_description {
-    font-weight: bold;
-    font-size: 25px;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-.new_guide_description_edit {
+#new_guide_description_edit {
     border-radius: 10px;
     border: 1px solid black;
     padding: 10px;
 
 }
 
-.new_guide_title_edit  {
+#new_guide_title_edit  {
     border-radius: 10px;
     border: 1px solid black;
     padding: 10px;
 
+}
+
+.new_guide_section_edit {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.new_guide_task_edit {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 5px;
+  width: 60%;
 }
 
 #new_guide_add_space {
@@ -29,6 +42,5 @@
 
 #new_guide_wrapper {
     border: 1px solid black;
-    background: image-url("pattern.svg");
-
+    background-color: image-url("pattern.svg");
 }

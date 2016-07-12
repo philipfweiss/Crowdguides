@@ -1,7 +1,15 @@
+#my_guide {
+  white-space: pre-wrap;
+}
+
 .preview_form {
   background-color: white;
   border-radius: 10px;
   border: 1px solid black;
+}
+
+.form_creator_no_scroll {
+  overflow-x: hidden;
 }
 
 .preview_form_centered {
@@ -49,4 +57,17 @@
   padding-right: 20px;
   font-size: 14px;
 
+}
+
+.preview_form_section_description {
+  font-size: 14px;
+
+}
+
+.modal_colored_background {
+  background-color: #f1fff8;
+}
+
+.preview_form_padded {
+  padding: 5px;
 }

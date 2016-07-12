@@ -1,45 +1,70 @@
-<div id="introduction_box">
-    <div class="introduction_title">
-        Welcome to the guide creator! Here are a few things to know before you start.
+
+<div class="container">
+    <!-- Trigger the modal with a button -->
+    <div class="col-md-6 text-center">
+        <button type="button" class="btn btn-info btn-sm intro_button_centered" data-toggle="modal" data-target="#myModal">Click here for instructions!</button>
     </div>
-    <ul>
-        <li>Guides are composed of <b class="introduction_section">Sections</b> and <b class="introduction_task">Tasks</b>.
-            <ul>
-                <li>
-                    Use <b class="introduction_section"> Sections </b> to to seperate out parts of your guide.
-                </li>
-                <li>
-                    Use <b class="introduction_task"> Tasks </b> to describe your individual steps.
-                </li>
-            </ul>
-        </li>
 
-        <li>
-            Each <b class="introduction_task">Task</b> is automatically given an <b class="introduction_advice">Advice</b> button <%= render 'shared/simple_guide_creator/introduction_form_button' %> to help your users navigate the task.
-        </li>
-        <li> Each section of the advice button, <b class="introduction_blocker">Blockers</b>, <b class="introduction_warning">Warnings</b>, and <b class="introduction_tip"> Tips </b>, allow users to add new advice, read the advice that others have given previously, or upvote and downvote advice
-            based on quality.
-            <ul>
-                <li>
-                   <b class="introduction_blocker">Blockers</b> are problems that could potentially prevent a user from continuing with the task.
-                </li>
-                <li>
-                    <b class="introduction_warning">Warnings</b> are less urgent problems, but could still potentially cause issues.
-                </li>
-                <li>
-                    <b class="introduction_tip">Tips</b> don't describe problems that could prevent a user from finishing a task, but instead
-                    provide helpful advice that could make the users experience during this step.
-                </li>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content modal_colored_background">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="introduction_title">
+                        Welcome to the guide creator! Here are a few things to know before you start.
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <ol>
+                        <li>Guides are composed of <b class="introduction_section">Sections</b> and <b class="introduction_task">Tasks</b>.
+
+                            <ul>
+                                <li>
+                                    Use <b class="introduction_section"> Sections </b> to to seperate out parts of your guide.
+                                </li>
+                                <li>
+                                    Use <b class="introduction_task"> Tasks </b> to describe your individual steps.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            Each <b class="introduction_task">Task</b> is automatically given an <b class="introduction_advice">Advice</b> button <%= render 'shared/simple_guide_creator/introduction_form_button' %> to help your users navigate the task.
+                        </li>
+                        <li> Each section of the advice button, <b class="introduction_blocker">Blockers</b>, <b class="introduction_warning">Warnings</b>, and <b class="introduction_tip"> Tips</b>, allow users to add new advice, read the advice that others have given previously, or upvote and downvote advice
+                            based on quality.
+                            <ul>
+                                <li>
+                                    <b class="introduction_blocker"><%= render 'shared/simple_guide_creator/introduction_form_button' %> Blockers</b> are problems that could potentially prevent a user from continuing with the task.
+                                </li>
+                                <li>
+                                    <b class="introduction_warning"><%= render 'shared/simple_guide_creator/introduction_form_button' %> Warnings</b> are less urgent problems, but could still potentially cause issues.
+                                </li>
+                                <li>
+                                    <b class="introduction_tip"><%= render 'shared/simple_guide_creator/introduction_form_button' %> Tips</b> don't describe problems that could prevent a user from finishing a task, but instead
+                                    provide helpful advice that could make the users experience during this step.
+                                </li>
+                                <li>
+                                    These buttons don't lead anywhere now, but on a real guide they link to a forum that allows the
+                                    people going through your guide to collaborate and help each other out.
+                                </li>
 
 
-            </ul>
-        </li>
-        <li>
-            The <b>Preview</b> window on the right shows what your guide will look as you create it. Hit the "publish" button
-            at the bottom to publish your guide. If you are a logged in user you will automatically become the owner of your guide
-            and you can edit/curate it at any time in the future.
-        </li>
+                            </ul>
+                        </li>
+                        <li>
+                            The <b>Preview</b> window on the right shows what your guide will look as you create it. Hit the "publish" button
+                            at the bottom to publish your guide. If you are a logged in user you will automatically become the owner of your guide
+                            and you can edit/curate it at any time in the future.
+                        </li>
 
-    </ul>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

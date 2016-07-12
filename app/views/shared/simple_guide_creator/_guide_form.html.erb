@@ -1,26 +1,26 @@
-<%= form_for(@guide) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div>
+<div class="form_creator_no_scroll">
+    <!-- This file is controlled by app/assets/javascripts/new_guide_form/new_sections_and_tasks.js -->
+
+    <%= form_for(@guide) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div id="input_guide_form">
+            <div>
+                <%= render 'shared/simple_guide_creator/guide_creator_introduction'%>
+            </div>
+            <div>
+                <div id="new_guide_title">Guide Title:</div>
+                <input id="new_guide_title_edit" placeholder="Add a Title..."></input>
+            </div>
+
+            <div>
+                <div id="new_guide_description">Guide Description:</div>
+                <textarea id="new_guide_description_edit" placeholder="Add a Description..."></textarea>
+            </div>
 
 
-
-        <div>
-            <div id="new_guide_title">Title:</div>
-            <%= f.text_field :title, placeholder: "Add a title...", class: :new_guide_title_edit %>
+            <button type="button" class="btn btn-sm btn-success new_section_button" id="new_section_button"> Add Section </button>
+            <input name="commit" type="submit" value="Create" class="btn btn-lg btn-primary" />
         </div>
-
-        <div>
-            <div id="new_guide_description">Description</div>
-            <%= f.text_field :description, placeholder: "Add a description...", class: :new_guide_description_edit %>
-        </div>
-
-        <button type="button" class="btn btn-sm btn-success new_section_button"> New Section </button>
-
-
-
-        <input name="commit" type="submit" value="Create" class="btn btn-lg btn-primary" />
-
-    </div>
-
     <% end %>
+</div>
 
