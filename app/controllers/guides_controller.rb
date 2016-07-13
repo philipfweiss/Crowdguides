@@ -8,8 +8,6 @@ class GuidesController < ApplicationController
       @user = current_user
 
 
-
-
   end
 
   def create
@@ -18,12 +16,18 @@ class GuidesController < ApplicationController
     else
       @guide = Guide.create(guides_params)
     end
+
     if @guide.save
-      flash[:success] = "Guide created!"
-      redirect_to @user
+      if @user
+        flash[:success] = "Guide created!"
+        redirect_to @user
+      else
+        flash[:success] = "Guide created!"
+        redirect_to home_path
+      end
     else
-      flash[:failure] = "Failed to create your guide"
-      render 'static_pages/home'
+      flash.now[:failure] = "Failed to create your guide"
+
     end
   end
 
@@ -33,7 +37,7 @@ class GuidesController < ApplicationController
   private
 
     def guides_params
-      params.require(:guide).permit(:title, :description)
+      params.require(:guide).permit(:title, :description, :content)
     end
 
 end
