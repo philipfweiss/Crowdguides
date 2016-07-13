@@ -6,8 +6,6 @@ class GuidesController < ApplicationController
       @guide = Guide.new
     end
       @user = current_user
-
-
   end
 
   def create
@@ -30,6 +28,11 @@ class GuidesController < ApplicationController
 
     end
   end
+
+  def index
+    @guides = Guide.paginate(page: params[:page], :per_page => 5)
+  end
+
 
   def destroy
   end

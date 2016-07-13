@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page], :per_page => 5)
-
   end
 
   def show
@@ -25,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to Crowdguides!"
       redirect_to @user
     else
       render 'new'

@@ -1,0 +1,23 @@
+<% provide(:title, 'All users') %>
+<h1 class="center">All Guides</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+    <% @guides.each do |guide| %>
+        <div>
+            <h3>
+                <%=  guide.title %>
+            </h3>
+            <div>
+                <%= guide.description %>
+            </div>
+
+            <div>
+                <%= guide.content %>
+            </div>
+        </div>
+    <% end %>
+</ul>
+
+<%= will_paginate %>
