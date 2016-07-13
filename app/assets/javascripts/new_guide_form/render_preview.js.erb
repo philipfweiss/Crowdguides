@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var renderGuide = function() {
+        if ($(this).id === '#content_preview') {}
         var title = '## ' + $("#new_guide_title_edit").val();
         if(title.length < 4) {
             title = "## Please Enter a Title \n";
@@ -22,16 +23,14 @@ $(document).ready(function() {
         var html_content = title + description + md_content;
         html_content = markdown.toHTML( html_content );
         html_content = html_content.replace(re, buttonDiv);
-        console.log(html_content);
 
 
-
+        $('#modal_body').html(html_content);
         $('#preview_tab').html(html_content);
     };
 
     // Render specialized markdown on preview button click,
     $(document).on("click", '#content_preview', renderGuide);
-
 
 
 });

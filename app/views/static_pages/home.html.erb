@@ -2,15 +2,12 @@
 
 <div class="center jumbotron" id="homepage_jumbo">
     <h1 id="crowdguides_main">Crowdguides</h1>
-
-
     <h2>
       <h5>
           Using the crowd to help provide advice in context
-
       </h5>
   </h2>
-    <div><%= link_to "Create a new guide", new_guide_path, class: "btn btn-lg btn-primary" %></div>
+    <div><%= link_to "Create a new guide", new_guide_path, id: "create_new_guide", class: "btn btn-lg btn-primary" %></div>
   <div id="second_button"><%= link_to "Or sign up for access to more tools!", signup_path, class: "btn btn-sml btn-info"%></div>
   <a href="https://xkcd.com/979/">Wisdom of the Ancients</a>
 </div>
