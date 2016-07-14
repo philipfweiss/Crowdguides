@@ -2,23 +2,31 @@
 <div class="row">
     <div class="col-md-6 center user_info">
         <h3><%= @user.name %></h3>
+        <div class="jumbotron padded_jumbo">
+            User Profile Here
+        </div>
     </div>
     <div class="col-md-6">
         <% if @user.guides.any? %>
             <h3 class="center">Guides (<%= @user.guides.count %>)</h3>
-            <div class="">
+
+        <% will_paginate @guides%>
+
+            <div class="guide_index jumbotron padded_jumbo">
                 <% @guides.each do |guide| %>
-                    <div class="">
-                        <h3>
-                            <%= guide.title %>
-                        </h3>
+                    <div class="each_guide">
+                        <h4>
+                            <%= link_to guide.title, guide  %>
+                        </h4>
                         <div>
                             <%= guide.description %>
                         </div>
                     </div>
                 <% end %>
-                <%= will_paginate @guides %>
             </div>
+
+        <% will_paginate @guides%>
+
 
 
 

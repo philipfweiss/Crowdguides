@@ -3,21 +3,18 @@
 
 <%= will_paginate %>
 
-<ul class="users">
+<div class="guide_index">
     <% @guides.each do |guide| %>
-        <div>
-            <h3>
+        <div class="each_guide">
+            <h4>
+                <%= guide.id %>
                 <%= link_to guide.title, guide  %>
-            </h3>
+            </h4>
             <div>
                 <%= guide.description %>
             </div>
-
-            <!--<div>-->
-                <!--<%= guide.content %>-->
-            <!--</div>-->
         </div>
     <% end %>
-</ul>
+</div>
 
 <%= will_paginate %>
