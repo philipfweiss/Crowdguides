@@ -1,0 +1,21 @@
+<div class="show_guide_wrapper" id="guide_content">
+
+</div>
+
+<script type="text/javascript" charset="utf-8">
+
+    $(document).ready(function() {
+
+        var title = '## ' + gon.title + '\n';
+        var description = '#### ' + gon.description + '\n\n' + ' \n' + " ---------- " +'\n';
+
+        var re = /(\[\s?\d{1,10}\s?])/gi; // Match all instances of [-]
+        var buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="#">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="#">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="#">Tips: 0</a></li> </ul>';
+        var buttonDiv = '<b><div class="dropdown intro_dropdown"><button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"><span class="caret"></span></button>' + buttonContents + '</span></b>';
+        var html_content = markdown.toHTML(title + description + gon.content);
+        html_content = html_content.replace(re, buttonDiv);
+
+        $('#guide_content').html(html_content);
+    });
+
+</script>

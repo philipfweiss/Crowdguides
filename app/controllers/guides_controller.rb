@@ -12,6 +12,7 @@ class GuidesController < ApplicationController
     if logged_in?
       @guide = current_user.guides.build(guides_params)
     else
+
       @guide = Guide.create(guides_params)
     end
 
@@ -31,6 +32,15 @@ class GuidesController < ApplicationController
 
   def index
     @guides = Guide.paginate(page: params[:page], :per_page => 5)
+  end
+
+  def show
+    @guide = Guide.find(params[:id])
+    gon.push({
+      :title => @guide.title,
+      :description => @guide.description,
+      :content => @guide.content
+   })
   end
 
 

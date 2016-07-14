@@ -39,7 +39,13 @@
             <!--<button type="button" class="btn btn-sm btn-success new_section_button" id="new_section_button"> Add Section </button>-->
             <div class="submit_preview_button btn btn-md btn-info" id="content_preview"> Preview </div>
 
-            <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+            <% if logged_in?  %>
+
+                <%= f.submit "Submit", data: {confirm: "Click confirm to create your guide."},class: "btn btn-lg btn-primary" %>
+            <% else %>
+                <%= f.submit "Submit", data: {confirm: "Are you sure you want to create this guide? You are not logged in and thus you will not have admin control over the guide"},class: "btn btn-lg btn-primary" %>
+            <% end %>
+
         </div>
     <% end %>
 </div>

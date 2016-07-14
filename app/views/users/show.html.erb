@@ -1,20 +1,32 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-    <div class="col-md-8">
+    <div class="col-md-6 center user_info">
+        <h3><%= @user.name %></h3>
+    </div>
+    <div class="col-md-6">
         <% if @user.guides.any? %>
-            <h3>Guides (<%= @user.guides.count %>)</h3>
-            <ol class="guides">
-                <%= render @guides %>
-            </ol>
-            <%= will_paginate @guides %>
+            <h3 class="center">Guides (<%= @user.guides.count %>)</h3>
+            <div class="">
+                <% @guides.each do |guide| %>
+                    <div class="">
+                        <h3>
+                            <%= guide.title %>
+                        </h3>
+                        <div>
+                            <%= guide.description %>
+                        </div>
+                    </div>
+                <% end %>
+                <%= will_paginate @guides %>
+            </div>
+
+
+
+    <% else %>
+            <div class="center" id="second_button">
+                <h5>You currently have don't have any guides. Click the button below to create one. </h5>
+                <%= link_to "Create a guide!", new_guide_path, class: "btn btn-sml btn-info"%>
+            </div>
         <% end %>
     </div>
 </div>
