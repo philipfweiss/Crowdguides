@@ -1,5 +1,13 @@
 <div class="show_guide_wrapper" id="guide_content">
+</div>
 
+<div class="guide_owner_info" id="guide_info">
+    <% if @owner.nil? %>
+        This guide does not have an owner and is open to the public
+    <% else  %>
+        This guide is owned and managed by <%= link_to @owner.name, @owner %>
+
+<% end %>
 </div>
 
 <script type="text/javascript" charset="utf-8">
@@ -16,6 +24,7 @@
         html_content = html_content.replace(re, buttonDiv);
 
         $('#guide_content').html(html_content);
+
     });
 
 </script>

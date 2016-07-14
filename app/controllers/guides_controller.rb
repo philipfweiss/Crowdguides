@@ -19,11 +19,11 @@ class GuidesController < ApplicationController
     if @guide.save
       if @user
         flash[:success] = "Guide created!"
-        redirect_to @user
       else
         flash[:success] = "Guide created!"
-        redirect_to home_path
       end
+      redirect_to @guide
+
     else
       flash.now[:failure] = "Failed to create your guide"
 
@@ -36,6 +36,12 @@ class GuidesController < ApplicationController
 
   def show
     @guide = Guide.find(params[:id])
+    if !@guide.user_id.nil?
+      @owner = User.find(@guide.user_id)
+    else
+      @owner = nil
+    end
+
     gon.push({
       :title => @guide.title,
       :description => @guide.description,

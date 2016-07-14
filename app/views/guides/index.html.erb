@@ -7,7 +7,7 @@
     <% @guides.each do |guide| %>
         <div>
             <h3>
-                <%=  guide.title %>
+                <%= link_to guide.title, guide  %>
             </h3>
             <div>
                 <%= guide.description %>
