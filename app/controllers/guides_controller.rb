@@ -44,7 +44,8 @@ class GuidesController < ApplicationController
     gon.push({
       :title => @guide.title,
       :description => @guide.description,
-      :content => @guide.content
+      :content => @guide.content,
+      :current_guide => params[:id]
    })
   end
 

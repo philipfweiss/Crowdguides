@@ -20,9 +20,9 @@
 
         var re = /(\[\s?\d{1,10}\s?])/gi; // Match all instances of [-]
 
-        var buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="http://www.google.com">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="#">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="#">Tips: 0</a></li> </ul>';
         var buttonDiv = function(id) {
             id = id.slice(1, -1);
+            var buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="advice/'+id+'#blockers">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="advice/'+id+'#warnings">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="advice/'+id+'"#tips>Tips: 0</a></li> </ul>';
             console.log(id + "??");
             return '<b title="ID: '+ id + '"><div id="'+ id + '" class="dropdown intro_dropdown"><button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"><span class="caret"></span></button>' + buttonContents + '</span></b>';
         };

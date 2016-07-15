@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'advice/index'
+
   get 'sessions/new'
 
   get 'users/new'
@@ -17,5 +19,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   resources :users
-  resources :guides
+  resources :guides do
+    resources :advice
+  end
 end
