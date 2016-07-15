@@ -1,17 +1,11 @@
-<div id="blockers" class="advice_blockers advice_container">
-    <h5 class="center">
-        Blockers
-    </h5>
-</div>
+<div class="advice_portal_wrapper">
+    <h2 class="center"> <%= @guide.title %> </h2>
+    <h4 class="center">Advice Portal <%= @id %> </h4>
 
-<div id="warnings" class="advice_warnings advice_container">
-    <h5 class="center">
-        Warnings
-    </h5>
-</div>
+    <%= render 'shared/advice_display_page/advice_blockers'%>
+    <hr>
+    <%= render 'shared/advice_display_page/advice_warnings'%>
+    <hr>
+    <%= render 'shared/advice_display_page/advice_tips'%>
 
-<div id="info" class="advice_info advice_container">
-    <h5 class="center">
-        Tips
-    </h5>
 </div>

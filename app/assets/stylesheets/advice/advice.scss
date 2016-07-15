@@ -2,27 +2,69 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+#advice_yellow {
+  background-color: #fff5b5;
+
+}
+
+#advice_blue {
+  background-color: #d8dcff;
+
+}
+
+#advice_red {
+  background-color: #ffe3f0;
+}
+
 .advice_container {
-  border: 1px solid black;
-  border-radius: 2px;
+  border-radius: 10px;
   padding: 10px;
+  padding-bottom: 30px;
   margin: 20px;
 }
 
 .advice_blockers {
-  background-color: #ededed;
   border-left: 5px solid grey;
+
 }
 
 .advice_warnings {
-  background-color: #fff7c7;
   border-left: 5px solid grey;
 
 }
 
 .advice_info {
-  background-color: #eafff4;
   border-left: 5px solid grey;
 
+}
 
+.advice_portal_wrapper {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+
+.circular {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  background-color: white;
+  text-align: center;
+}
+
+.flexible_advice {
+  display: flex;
+  line-height: 25px;
+  height: 50%;
+}
+
+.advice_content_wrapper {
+  border: 1px outset grey;
+  border-radius: 10px;
 }
