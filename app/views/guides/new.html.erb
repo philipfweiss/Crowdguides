@@ -1,4 +1,20 @@
 <% provide(:title, "New Guide") %>
+    <% if !logged_in? %>
+    <div class="boxed_warning">
+        <div class="center logged_out_warning">
+            Warning: you are not logged in!
+        </div>
+        <div class="center logged_out_warning_small">
+            <b> Readers must have "All" selected on the browse guides page in order to see your guide.</b>
+            <br>
+            <b>You will not get attribution - we don't know who you are! </b>
+            <br>
+            <b>You will not be able to edit the guide again after you leave this page or close this tab/window. </b>
+        </div>
+    </div>
+
+    <% end %>
+
 <div class="container">
     <div class="row" id="new_guide_wrapper">
         <aside class="col-md-6">

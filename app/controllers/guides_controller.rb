@@ -12,7 +12,6 @@ class GuidesController < ApplicationController
     if logged_in?
       @guide = current_user.guides.build(guides_params)
     else
-
       @guide = Guide.create(guides_params)
     end
 
@@ -23,8 +22,8 @@ class GuidesController < ApplicationController
         flash[:success] = "Guide created!"
       end
       redirect_to @guide
-
     else
+      render 'new'
       flash.now[:failure] = "Failed to create your guide"
 
     end

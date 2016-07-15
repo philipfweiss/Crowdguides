@@ -65,3 +65,19 @@
 .preview_form_padded {
   padding: 5px;
 }
+
+.logged_out_warning {
+  font-size: 20px;
+  padding: 10px;
+  color: red;
+}
+
+.logged_out_warning_small {
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+
+.boxed_warning {
+  border: 1px dashed black;
+  margin-bottom: 10px;
+}

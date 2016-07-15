@@ -2,11 +2,15 @@
     <!-- This file is controlled by app/assets/javascripts/new_guide_form/new_sections_and_tasks.js -->
 
     <%= form_for(@guide) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
+        <%= render 'shared/guide_error_messages'%>
+
         <div id="input_guide_form">
             <div>
                 <%= render 'shared/simple_guide_creator/guide_creator_introduction'%>
             </div>
+
+
+
             <div>
 
                 <%= f.label :title, id: "new_guide_title" %>
@@ -29,16 +33,61 @@
                 ',placeholder: "Use Markdown to add your own content! \nCheck out the instructions button above. ",  id: 'new_guide_content_edit' %>
             </div>
 
-
+            <div class="center">
+                <div class="submit_preview_button btn btn-md btn-info" id="content_preview"> Preview </div>
+            </div>
             <!--<button type="button" class="btn btn-sm btn-success new_section_button" id="new_section_button"> Add Section </button>-->
-            <div class="submit_preview_button btn btn-md btn-info" id="content_preview"> Preview </div>
 
-            <% if logged_in?  %>
+            <div>
 
-                <%= f.submit "Submit", data: {confirm: "Click confirm to create your guide."},class: "btn btn-lg btn-primary" %>
-            <% else %>
-                <%= f.submit "Submit", data: {confirm: "Are you sure you want to create this guide? You are not logged in and thus you will not have admin control over the guide"},class: "btn btn-lg btn-primary" %>
-            <% end %>
+            </div>
+
+            <div class="center">
+            <!-- Trigger the modal with a button -->
+                <button type="button" class="submit_preview_button btn btn-md btn-success" data-toggle="modal" data-target="#submitModal">Submit</button>
+             <!-- Modal -->
+                <div id="submitModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <% if logged_in?  %>
+                                    Are you sure you want to submit your guide?
+                                <% else %>
+                                    <b style="color: red"> !!! Warning - You are not logged in. </b>
+                                    <h4> Are you sure you want to submit your guide?</h4>
+                                    <ul class="nice_bullets">
+                                        <li>
+                                           <b> Readers must have "All" selected on the browse guides page in order to see your guide.</b>
+                                        </li>
+                                        <li>
+                                            <b>You will not get attribution - we don't know who you are! </b>
+                                        </li>
+                                        <li>
+                                            <b>You will not be able to edit the guide again after you leave this page or close this tab/window. </b>
+                                        </li>
+                                    </ul>
+
+
+                            <% end %>
+                            </div>
+                            <div class="modal-body">
+                                <% if logged_in?  %>
+                                    <%= f.submit "Submit", class: "btn btn-sm btn-primary" %>
+                                <% else %>
+                                    <%= f.submit "Submit", class: "btn btn-sm btn-primary" %>
+                                <% end %>                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     <% end %>
