@@ -12,56 +12,37 @@
             <!-- Modal content-->
             <div class="modal-content modal_colored_background">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="introduction_title">
-                        Welcome to the guide creator! Here are a few things to know before you start.
-                    </h2>
+                    <h4 class="center">Welcome to the CrowdGuides creator!</h4>
+                    <h6 class="center"> Here are some things to know before you get started. </h6>
                 </div>
                 <div class="modal-body">
-                    <ol>
-                        <li>Guides are composed of <b class="introduction_section">Sections</b> and <b class="introduction_task">Tasks</b>.
-
-                            <ul>
-                                <li>
-                                    Use <b class="introduction_section"> Sections </b> to to seperate out parts of your guide.
-                                </li>
-                                <li>
-                                    Use <b class="introduction_task"> Tasks </b> to describe your individual steps.
-                                </li>
-                            </ul>
+                    <ul>
+                        <li class="padded">
+                            The aim of crowdguides is to provide a mechanism for people going through your guide to share
+                            solutions to various problems that previously all users would have had to hunt down individually.
                         </li>
 
-                        <li>
-                            Each <b class="introduction_task">Task</b> is automatically given an <b class="introduction_advice">Advice</b> button <%= render 'shared/simple_guide_creator/introduction_form_button' %> to help your users navigate the task.
+                        <li class="padded">
+                            Users can take advantage of Advice Portals <%= render 'shared/simple_guide_creator/introduction_form_button', locals: {id: 1} %> that you
+                            put into your page to collaborate and make the experience better for everyone.
                         </li>
-                        <li> Each section of the advice button, <b class="introduction_blocker">Blockers</b>, <b class="introduction_warning">Warnings</b>, and <b class="introduction_tip"> Tips</b>, allow users to add new advice, read the advice that others have given previously, or upvote and downvote advice
-                            based on quality.
-                            <ul>
-                                <li>
-                                    <b class="introduction_blocker"><%= render 'shared/simple_guide_creator/introduction_form_button' %> Blockers</b> are problems that could potentially prevent a user from continuing with the task.
-                                </li>
-                                <li>
-                                    <b class="introduction_warning"><%= render 'shared/simple_guide_creator/introduction_form_button' %> Warnings</b> are less urgent problems, but could still potentially cause issues.
-                                </li>
-                                <li>
-                                    <b class="introduction_tip"><%= render 'shared/simple_guide_creator/introduction_form_button' %> Tips</b> don't describe problems that could prevent a user from finishing a task, but instead
-                                    provide helpful advice that could make the users experience during this step.
-                                </li>
-                                <li>
-                                    These buttons don't lead anywhere now, but on a real guide they link to a forum that allows the
-                                    people going through your guide to collaborate and help each other out.
-                                </li>
-
-
-                            </ul>
-                        </li>
-                        <li>
-                            The <b>Preview</b> window on the right shows what your guide will look as you create it. Hit the "publish" button
-                            at the bottom to publish your guide. If you are a logged in user you will automatically become the owner of your guide
-                            and you can edit/curate it at any time in the future.
+                        <li class="padded">
+                            Crowdguides are created using <b><a target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a></b>,
+                            a language designed to be easy to create with and easy to read.
                         </li>
 
-                    </ol>
+                        <li class="padded">
+                            Advice Portals can be added by including a 1-10 digit number between two brackets. For example,
+                            <b>[68] will turned in to <%= render 'shared/simple_guide_creator/introduction_form_button',locals: {id: 68} %></b>
+                        </li>
+
+                        <li class="padded">
+                            The number inside of the brackets corresponds to the ID of the Advice Portal. This system allows for multiple portals
+                            to direct to the same location, or for portals to be moved around when the guide is edited.
+                        </li>
+
+                    </ul>
+
                 </div>
             </div>
         </div>

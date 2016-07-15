@@ -18,7 +18,11 @@ $(document).ready(function() {
 
         var re = /(\[\s?\d{1,10}\s?])/gi; // Match all instances of [-]
         var buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="#">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="#">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="#">Tips: 0</a></li> </ul>';
-        var buttonDiv = '<b><div class="dropdown intro_dropdown"><button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"><span class="caret"></span></button>' + buttonContents + '</span></b>';
+        var buttonDiv = function(id) {
+            id = id.slice(1, -1);
+            console.log(id + "??");
+            return '<b title="ID: '+ id + '"><div id="'+ id + '" class="dropdown intro_dropdown"><button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"><span class="caret"></span></button>' + buttonContents + '</span></b>';
+        };
 
         var html_content = title + description + md_content;
         html_content = markdown.toHTML( html_content );
