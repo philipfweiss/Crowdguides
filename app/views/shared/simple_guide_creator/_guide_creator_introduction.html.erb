@@ -18,22 +18,23 @@
                 <div class="modal-body">
                     <ul>
                         <li class="padded">
-                            The aim of crowdguides is to provide a mechanism for people going through your guide to share
-                            solutions to various problems that previously all users would have had to hunt down individually.
-                        </li>
-
-                        <li class="padded">
-                            Users can take advantage of Advice Portals <%= render 'shared/simple_guide_creator/introduction_form_button', locals: {id: 1} %> that you
-                            put into your page to collaborate and make the experience better for everyone.
-                        </li>
-                        <li class="padded">
                             Crowdguides are created using <b><a target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a></b>,
                             a language designed to be easy to create with and easy to read.
+                        </li>
+                        <li class="padded">
+                            The aim of Crowdguides is to provide a mechanism for people going through your guide to share
+                            solutions to various problems that previously each user would have had to hunt down individually.
                         </li>
 
                         <li class="padded">
                             Advice Portals can be added by including a 1-10 digit number between two brackets. For example,
-                            <b>[68] will turned in to <%= render 'shared/simple_guide_creator/introduction_form_button',locals: {id: 68} %></b>
+                            <b>[68] will turned in to <%= render 'shared/simple_guide_creator/introduction_form_button',locals: {id: 68} %></b>. You can hover
+                            over a portal to view its ID.
+                        </li>
+
+                        <li class="padded">
+                            When a user clicks an Advice Portal <%= render 'shared/simple_guide_creator/introduction_form_button', locals: {id: 1} %>, they are
+                            brought to a corresponding page where users can collaborate and post solutions to potential problems.
                         </li>
 
                         <li class="padded">
