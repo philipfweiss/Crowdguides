@@ -30,7 +30,7 @@ class GuidesController < ApplicationController
           seen[x[0]]+=1
         end
       end
-      
+
       redirect_to @guide
 
     else
