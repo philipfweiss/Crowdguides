@@ -14,6 +14,10 @@
 <script type="text/javascript" charset="utf-8">
 
     $(document).ready(function() {
+        var windowLoc = new RegExp("/guides/" + gon.current_guide + '/');
+        if(window.location.href.match(windowLoc)) {
+            window.location.href = '/guides/' + gon.current_guide;
+        }
 
         var title = '## ' + gon.title + '\n';
         var description = '#### ' + gon.description + '\n\n' + ' \n' + " ---------- " +'\n';
@@ -22,8 +26,19 @@
 
         var buttonDiv = function(id) {
             id = id.slice(1, -1);
-            var buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="'+gon.current_guide+'/advice/'+id+'#blockers">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="'+gon.current_guide+'/advice/'+id+'#warnings">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="'+gon.current_guide+'/advice/'+id+'"#tips>Tips: 0</a></li> </ul>';
-            console.log(id + "??");
+            var buttonContents;
+            var currentLoc = window.location.href;
+
+            // Hacky: button links to slightly different url depending
+            if(currentLoc.charAt(currentLoc.length - 1) === '/') {
+                 buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="advice/'+id+'#blockers">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="advice/'+id+'#warnings">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="advice/'+id+'"#tips>Tips: 0</a></li> </ul>';
+            } else {
+                 buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="'+gon.current_guide+'/advice/'+id+'#blockers">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="'+gon.current_guide+'/advice/'+id+'#warnings">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="'+gon.current_guide+'/advice/'+id+'"#tips>Tips: 0</a></li> </ul>';
+            }
+
+
+
+
             return '<b title="ID: '+ id + '"><div id="'+ id + '" class="dropdown intro_dropdown"><button class="btn btn-xs dropdown-toggle intro_form_button" type="button" data-toggle="dropdown"><span class="caret"></span></button>' + buttonContents + '</span></b>';
         };
         var html_content = markdown.toHTML(title + description + gon.content);
