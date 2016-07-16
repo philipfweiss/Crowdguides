@@ -16,12 +16,23 @@ class GuidesController < ApplicationController
     end
 
     if @guide.save
-      if @user
+      if @user1
         flash[:success] = "Guide created!"
       else
         flash[:success] = "Guide created!"
       end
+
+      advices = @guide.content.scan(/\[\s?(\d{1,10})\s?]/)
+      seen = Hash.new(0)
+      advices.each do |x|
+        if seen[x[0]] == 0
+          Advice.create({guide_id: @guide.id, inner_guide_id: x[0], description: "test"})
+          seen[x[0]]+=1
+        end
+      end
+      
       redirect_to @guide
+
     else
       render 'new'
       flash.now[:failure] = "Failed to create your guide"
