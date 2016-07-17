@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160717010305) do
+ActiveRecord::Schema.define(version: 20160717010909) do
 
   create_table "advices", force: :cascade do |t|
     t.integer  "guide_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160717010305) do
     t.text     "contents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "issue_type"
   end
 
   add_index "tidbits", ["advice_id"], name: "index_tidbits_on_advice_id"
