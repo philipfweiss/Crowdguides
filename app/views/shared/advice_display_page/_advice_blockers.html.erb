@@ -1,7 +1,16 @@
 <div id="blockers" class="advice_blockers advice_container">
     <h5 class="flexible_advice">
-        <div id="advice_red" class="circular">B</div>
-
     </h5>
     <h3 class="center"> Blockers </h3>
+    <ul>
+        <div>
+            <% @blockers.each do |blocker| %>
+                <div class="blocker_box">
+                    <%= link_to blocker.user.name %>
+                    <span><%= blocker.title %></span>
+                </div>
+            <% end %>
+        </div>
+    </ul>
+
 </div>
