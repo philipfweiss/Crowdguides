@@ -1,7 +1,56 @@
 <div id="warnings" class="advice_warnings advice_container">
     <h5 class="flexible_advice">
     </h5>
-    <h3 class="center"> Warnings </h3>
+    <h4 class="center"> Warnings </h4>
+
+    <%= will_paginate @warnings%>
+
+    <% @warnings.each do |warning| %>
+    <div class="tidbit_wrapper">
+        <div class="tidbit_box">
+            <div class="tidbit_flex">
+                    <span class="vote-vote circle">
+                        <span class="vote-increment vote-up"></span>
+                        <span class="vote-increment vote-down"></span>
+                        <span class="vote-count">1</span>
+                    </span>
+
+                <span class="advice_title"><%= link_to warning.user.name, warning.user %>  </span>
+                <span class="advice_title"><%=warning.title %></span>
+            </div>
+        </div>
+        <span class="centered advice_tidbit_information">
+            Created on <%= warning.created_at.to_formatted_s(:long) %>
+        </span>
+    </div>
+    <% end %>
+
+    <%= will_paginate @warnings%>
+
+
+    <script>
+        //        This will not work in its current form
+        $(function(){
+            $(".vote-increment").click(function(){
+                var count = parseInt($("~ .vote-count", this).text());
+                if($(this).hasClass("vote-up")) {
+                    count = count + 1;
+
+                    $("~ .vote-count", this).text(count);
+                } else {
+                    count = count - 1;
+                    $("~ .vote-count", this).text(count);
+                }
+
+                $(this).parent().addClass("vote-bump");
+
+                setTimeout(function(){
+                    $(this).parent().removeClass("vote-bump");
+                }, 400);
+            });
+        });
+    </script>
+
 
 
 </div>

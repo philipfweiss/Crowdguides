@@ -1,5 +1,55 @@
 <div id="info" class="advice_info advice_container">
     <h5 class="flexible_advice">
     </h5>
-    <h3 class="center"> Tips </h3>
+    <h4 class="center"> Tips </h4>
+
+    <%= will_paginate @tips%>
+
+    <% @tips.each do |tip| %>
+    <div class="tidbit_wrapper">
+        <div class="tidbit_box">
+            <div class="tidbit_flex">
+                    <span class="vote-vote circle">
+                        <span class="vote-increment vote-up"></span>
+                        <span class="vote-increment vote-down"></span>
+                        <span class="vote-count">1</span>
+                    </span>
+
+                <span class="advice_title"><%= link_to tip.user.name, tip.user %>  </span>
+                <span class="advice_title"><%=tip.title %></span>
+            </div>
+            <span class="centered advice_tidbit_information">
+                Created on <%= tip.created_at.to_formatted_s(:long) %>
+            </span>
+        </div>
+    </div>
+    <% end %>
+
+    <%= will_paginate @tips%>
+
+
+    <script>
+        //        This will not work in its current form
+        $(function(){
+            $(".vote-increment").click(function(){
+                var count = parseInt($("~ .vote-count", this).text());
+                if($(this).hasClass("vote-up")) {
+                    count = count + 1;
+
+                    $("~ .vote-count", this).text(count);
+                } else {
+                    count = count - 1;
+                    $("~ .vote-count", this).text(count);
+                }
+
+                $(this).parent().addClass("vote-bump");
+
+                setTimeout(function(){
+                    $(this).parent().removeClass("vote-bump");
+                }, 400);
+            });
+        });
+    </script>
+
+
 </div>

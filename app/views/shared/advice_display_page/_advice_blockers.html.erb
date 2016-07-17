@@ -1,11 +1,12 @@
 <div id="blockers" class="advice_blockers advice_container">
     <h5 class="flexible_advice">
     </h5>
-    <h3 class="center"> Blockers </h3>
+    <h4 class="center"> Blockers </h4>
 
     <%= will_paginate @blockers%>
 
     <% @blockers.each do |blocker| %>
+        <div class="tidbit_wrapper">
             <div class="tidbit_box">
                 <div class="tidbit_flex">
                     <span class="vote-vote circle">
@@ -14,10 +15,14 @@
                         <span class="vote-count">1</span>
                     </span>
 
-                    <span class="advice_title"><%= link_to blocker.user.name %>  </span>
+                    <span class="advice_title"><%= link_to blocker.user.name, blocker.user %>  </span>
                     <span class="advice_title"><%=blocker.title %></span>
                 </div>
             </div>
+             <span class="centered advice_tidbit_information">
+                Created on <%= blocker.created_at.to_formatted_s(:long) %>
+            </span>
+        </div>
         <% end %>
 
     <%= will_paginate @blockers%>

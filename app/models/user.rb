@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :guides, dependent: :destroy
+  has_many :advices, dependent: :destroy
   has_many :tidbits, dependent: :destroy
 
   attr_accessor :remember_token, :activation_token
