@@ -2,23 +2,26 @@
     <h5 class="flexible_advice">
     </h5>
     <h3 class="center"> Blockers </h3>
-    <ul>
-        <div>
 
-            <% @blockers.each do |blocker| %>
-                <div class="blocker_box">
+    <%= will_paginate @blockers%>
+
+    <% @blockers.each do |blocker| %>
+            <div class="tidbit_box">
+                <div class="tidbit_flex">
                     <span class="vote-vote circle">
                         <span class="vote-increment vote-up"></span>
                         <span class="vote-increment vote-down"></span>
                         <span class="vote-count">1</span>
                     </span>
 
-                    <div><%= link_to blocker.user.name %> </div>
-                    <div><%= blocker.title %></div>
+                    <span class="advice_title"><%= link_to blocker.user.name %>  </span>
+                    <span class="advice_title"><%=blocker.title %></span>
                 </div>
-            <% end %>
-        </div>
-    </ul>
+            </div>
+        <% end %>
+
+    <%= will_paginate @blockers%>
+
 
     <script>
 //        This will not work in its current form

@@ -1,15 +1,22 @@
-.blocker_box {
-  margin: 5px;
+.tidbit_box {
   border-radius: 5px;
-  padding: 10px;
-  border-bottom: 1px dotted grey;
+  padding: 0px;
+}
+
+.advice_title {
+  margin: 5px;
+}
+
+.tidbit_flex {
+  display:flex;
+  align-items: center;
 
 }
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
 
-$size : 4rem;
-$border-width : .2rem;
+$size : 3rem;
+$border-width : .1rem;
 $radius : 1rem; /* try 50% */
 $transition : .3s;
 

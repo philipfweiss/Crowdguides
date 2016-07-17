@@ -10,7 +10,7 @@
         <% if @user.guides.any? %>
             <h3 class="center">Guides (<%= @user.guides.count %>)</h3>
 
-        <% will_paginate @guides%>
+        <%= will_paginate @guides%>
 
             <div class="guide_index jumbotron padded_jumbo">
                 <% @guides.each do |guide| %>
@@ -25,7 +25,7 @@
                 <% end %>
             </div>
 
-        <% will_paginate @guides%>
+        <%= will_paginate @guides%>
 
 
 
