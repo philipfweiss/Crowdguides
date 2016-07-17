@@ -5,6 +5,15 @@
 
     <%= will_paginate @tips%>
 
+    <% if @tips.size == 0 %>
+        <div class="tidbit_wrapper">
+            <div class="center empty_tidbit_box">
+                <button class="btn btn-sm btn-info">No tips yet! Click to add one </button>
+            </div>
+        </div>
+    <% end %>
+
+
     <% @tips.each do |tip| %>
     <div class="tidbit_wrapper">
         <div class="tidbit_box">

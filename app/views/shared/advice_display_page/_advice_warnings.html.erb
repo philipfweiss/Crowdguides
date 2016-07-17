@@ -5,6 +5,15 @@
 
     <%= will_paginate @warnings%>
 
+    <% if @warnings.size == 0 %>
+        <div class="tidbit_wrapper">
+            <div class="center empty_tidbit_box">
+                <button class="btn btn-sm btn-info">No warnings yet! Click to add one </button>
+            </div>
+        </div>
+    <% end %>
+
+
     <% @warnings.each do |warning| %>
     <div class="tidbit_wrapper">
         <div class="tidbit_box">

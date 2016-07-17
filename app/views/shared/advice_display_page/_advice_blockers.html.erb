@@ -5,6 +5,14 @@
 
     <%= will_paginate @blockers%>
 
+    <% if @blockers.size == 0 %>
+        <div class="tidbit_wrapper">
+            <div class="center empty_tidbit_box">
+                <button class="btn btn-sm btn-info">No blockers yet! Click to add one </button>
+            </div>
+        </div>
+    <% end %>
+
     <% @blockers.each do |blocker| %>
         <div class="tidbit_wrapper">
             <div class="tidbit_box">
