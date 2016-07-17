@@ -4,13 +4,43 @@
     <h3 class="center"> Blockers </h3>
     <ul>
         <div>
+
             <% @blockers.each do |blocker| %>
                 <div class="blocker_box">
-                    <%= link_to blocker.user.name %>
-                    <span><%= blocker.title %></span>
+                    <span class="vote-vote circle">
+                        <span class="vote-increment vote-up"></span>
+                        <span class="vote-increment vote-down"></span>
+                        <span class="vote-count">1</span>
+                    </span>
+
+                    <div><%= link_to blocker.user.name %> </div>
+                    <div><%= blocker.title %></div>
                 </div>
             <% end %>
         </div>
     </ul>
+
+    <script>
+//        This will not work in its current form
+        $(function(){
+            $(".vote-increment").click(function(){
+                var count = parseInt($("~ .vote-count", this).text());
+                if($(this).hasClass("vote-up")) {
+                    count = count + 1;
+
+                    $("~ .vote-count", this).text(count);
+                } else {
+                    count = count - 1;
+                    $("~ .vote-count", this).text(count);
+                }
+
+                $(this).parent().addClass("vote-bump");
+
+                setTimeout(function(){
+                    $(this).parent().removeClass("vote-bump");
+                }, 400);
+            });
+        });
+    </script>
 
 </div>
