@@ -1,14 +1,17 @@
 <div id="info" class="advice_info advice_container">
     <h5 class="flexible_advice">
     </h5>
-    <h4 class="center"> Tips </h4>
+    <span>
+        <h4 class="center">
+            <button class="tip_button btn btn-sm btn-info"> Add Tip </button>
+        </h4>
+    </span>
 
     <%= will_paginate @tips%>
 
     <% if @tips.size == 0 %>
         <div class="tidbit_wrapper">
             <div class="center empty_tidbit_box">
-                <button class="btn btn-sm btn-info">No tips yet! Click to add one </button>
             </div>
         </div>
     <% end %>
@@ -19,8 +22,8 @@
         <div class="tidbit_box">
             <div class="tidbit_flex">
                     <span class="vote-vote circle">
-                        <span class="vote-increment vote-up"></span>
-                        <span class="vote-increment vote-down"></span>
+                        <span class="vote-increment-tip vote-up"></span>
+                        <span class="vote-increment-tip vote-down"></span>
                         <span class="vote-count">1</span>
                     </span>
 
@@ -40,7 +43,7 @@
     <script>
         //        This will not work in its current form
         $(function(){
-            $(".vote-increment").click(function(){
+            $(".vote-increment-tip").click(function(){
                 var count = parseInt($("~ .vote-count", this).text());
                 if($(this).hasClass("vote-up")) {
                     count = count + 1;

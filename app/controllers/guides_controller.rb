@@ -64,6 +64,7 @@ class GuidesController < ApplicationController
   def destroy
   end
 
+
   private
 
     def guides_params

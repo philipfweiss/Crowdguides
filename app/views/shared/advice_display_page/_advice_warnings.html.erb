@@ -1,14 +1,19 @@
 <div id="warnings" class="advice_warnings advice_container">
     <h5 class="flexible_advice">
     </h5>
-    <h4 class="center"> Warnings </h4>
+
+     <span>
+        <h4 class="center">
+            <button class="warning_button btn btn-sm btn-info"> Add Warning </button>
+        </h4>
+    </span>
+
 
     <%= will_paginate @warnings%>
 
     <% if @warnings.size == 0 %>
         <div class="tidbit_wrapper">
             <div class="center empty_tidbit_box">
-                <button class="btn btn-sm btn-info">No warnings yet! Click to add one </button>
             </div>
         </div>
     <% end %>
@@ -19,8 +24,8 @@
         <div class="tidbit_box">
             <div class="tidbit_flex">
                     <span class="vote-vote circle">
-                        <span class="vote-increment vote-up"></span>
-                        <span class="vote-increment vote-down"></span>
+                        <span class="vote-increment-warning vote-up"></span>
+                        <span class="vote-increment-warning vote-down"></span>
                         <span class="vote-count">1</span>
                     </span>
 

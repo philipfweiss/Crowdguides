@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   resources :users
   resources :guides do
-    resources :advice
+    resources :advice do
+      resources :tidbits
+    end
   end
 end

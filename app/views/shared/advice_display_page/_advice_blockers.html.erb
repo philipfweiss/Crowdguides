@@ -1,14 +1,18 @@
 <div id="blockers" class="advice_blockers advice_container">
     <h5 class="flexible_advice">
     </h5>
-    <h4 class="center"> Blockers </h4>
+    <span>
+        <h4 class="center">
+            <button class="blocker_button btn btn-sm btn-info"> Add Blocker </button>
+        </h4>
+    </span>
+
 
     <%= will_paginate @blockers%>
 
     <% if @blockers.size == 0 %>
         <div class="tidbit_wrapper">
             <div class="center empty_tidbit_box">
-                <button class="btn btn-sm btn-info">No blockers yet! Click to add one </button>
             </div>
         </div>
     <% end %>
@@ -18,8 +22,8 @@
             <div class="tidbit_box">
                 <div class="tidbit_flex">
                     <span class="vote-vote circle">
-                        <span class="vote-increment vote-up"></span>
-                        <span class="vote-increment vote-down"></span>
+                        <span class="vote-increment-blocker vote-up"></span>
+                        <span class="vote-increment-blocker vote-down"></span>
                         <span class="vote-count">1</span>
                     </span>
 
@@ -39,7 +43,7 @@
     <script>
 //        This will not work in its current form
         $(function(){
-            $(".vote-increment").click(function(){
+            $(".vote-increment-blocker").click(function(){
                 var count = parseInt($("~ .vote-count", this).text());
                 if($(this).hasClass("vote-up")) {
                     count = count + 1;
