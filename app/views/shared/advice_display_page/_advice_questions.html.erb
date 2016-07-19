@@ -29,8 +29,12 @@
                         <span class="vote-increment-question vote-down"></span>
                         <span class="vote-count">1</span>
                     </span>
+                <% if question.user != nil %>
+                    <span class="advice_title"><%= link_to question.user.name, question.user %>  </span>
+                <% else %>
+                    <span class="advice_title"><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
 
-                <span class="advice_title"><%= link_to question.user.name, question.user %>  </span>
+            <% end %>
                 <span class="advice_title"><%=question.title %></span>
             </div>
         </div>

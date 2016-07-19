@@ -13,7 +13,9 @@
 
             <%= f.hidden_field :issue_type,:value=> @tidbit_type %>
             <%= f.hidden_field :advice_id,:value=> @advice.id  %>
-            <%= f.hidden_field :user_id,:value=> current_user.id %>
+            <% unless current_user == nil%>
+                <%= f.hidden_field :user_id,:value=> current_user.id %>
+            <% end %>
 
 
 
