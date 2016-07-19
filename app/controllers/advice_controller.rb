@@ -16,5 +16,10 @@ class AdviceController < ApplicationController
     end
   end
 
+  def new
+    ## Creates a new tidbit, NOT a new
+    tidbit_type = params[:type]
+
+  end
 
 end

@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get 'new_guide' => 'guides#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-
   root 'static_pages#home'
   resources :users
   resources :guides do
