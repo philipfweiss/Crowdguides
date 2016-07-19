@@ -29,16 +29,17 @@
                         <span class="vote-increment-question vote-down"></span>
                         <span class="vote-count">1</span>
                     </span>
-                <% if question.user != nil %>
-                    <span class="advice_title"><%= link_to question.user.name, question.user %>  </span>
-                <% else %>
-                    <span class="advice_title"><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
-                <% end %>
-                <span class="advice_title"> <%=link_to question.title, "/tidbits/#{question.id}" %> </span>
+
+                <span class="advice_title advice_big_font"> <%=link_to question.title, "/tidbits/#{question.id}" %> </span>
             </div>
         </div>
         <span class="centered advice_tidbit_information">
-            Created on <%= question.created_at.to_formatted_s(:long) %>
+            Created on <%= question.created_at.to_formatted_s(:long) %> by
+            <% if question.user != nil %>
+                <span ><%= link_to question.user.name, question.user %>  </span>
+            <% else %>
+                <span ><%= link_to "(Anonymous) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
+            <% end %>
         </span>
     </div>
     <% end %>

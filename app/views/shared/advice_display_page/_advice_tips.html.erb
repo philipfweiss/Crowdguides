@@ -28,16 +28,17 @@
                         <span class="vote-count">1</span>
                     </span>
 
-                <% if tip.user != nil %>
-                    <span class="advice_title"><%= link_to tip.user.name, tip.user %>  </span>
-                <% else %>
-                    <span class="advice_title"><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
-                <% end %>
-                <span class="advice_title"> <%=link_to tip.title, "/tidbits/#{tip.id}" %> </span>
+
+                <span class="advice_title advice_big_font"> <%=link_to tip.title, "/tidbits/#{tip.id}" %> </span>
 
             </div>
             <span class="centered advice_tidbit_information">
-                Created on <%= tip.created_at.to_formatted_s(:long) %>
+                Created on <%= tip.created_at.to_formatted_s(:long) %>  by
+                <% if tip.user != nil %>
+                    <span ><%= link_to tip.user.name, tip.user %>  </span>
+                <% else %>
+                    <span ><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
+                <% end %>
             </span>
         </div>
     </div>
