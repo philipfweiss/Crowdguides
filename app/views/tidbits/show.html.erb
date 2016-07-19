@@ -29,7 +29,7 @@
             <% if @author.is_a? String %>
                 <span> <%= link_to @author, "/guides/#{@guide.id}/advice/#{@advice.inner_guide_id}" %> </span>
             <% else %>
-                <span> <%= link_to @author.name %> Asks: </span>
+                <span> <%= link_to @author.name %>  </span>
             <% end %>
         </div>
     </div>

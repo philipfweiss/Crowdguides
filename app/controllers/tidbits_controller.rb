@@ -17,10 +17,12 @@ class TidbitsController < ApplicationController
   def create
     @tidbit = Tidbit.new(tidbit_params)
     if @tidbit.save
-      flash[:success] = "You Successfully Submitted Your Question"
+      flash[:success] = "You have successfully submitted your Tidbit"
+      redirect_to "/tidbits/#{@tidbit.id}"
+    else
+      redirect_to "/guides/#{session[:last_guide]}/advice/#{session[:last_advice]}"
     end
 
-    redirect_to "/guides/#{session[:last_guide]}/advice/#{session[:last_advice]}"
   end
 
   def show

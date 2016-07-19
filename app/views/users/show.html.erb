@@ -26,15 +26,38 @@
             </div>
 
         <%= will_paginate @guides%>
-
-
-
-
     <% else %>
             <div class="center" id="second_button">
                 <h5>You currently don't have any guides. Click the button below to create one. </h5>
                 <%= link_to "Create a guide!", new_guide_path, class: "btn btn-sml btn-info"%>
             </div>
-        <% end %>
+    <% end %>
+
+
+
+
+    <% if @tidbits.any? %>
+
+        <h3 class="center">Tidbits (<%= @tidbits.count %>)</h3>
+            <div class="jumbotron padded_jumbo">
+                <%= will_paginate @tidbits %>
+
+                <% @tidbits.each do |tidbit| %>
+                    <div class="each_tidbit">
+                        <div>
+                        </div>
+                    </div>
+                <% end %>
+                <%= will_paginate @tidbits %>
+
+            </div>
+
+    <% else %>
+
+    <% end %>
+
+
+
+
     </div>
 </div>
