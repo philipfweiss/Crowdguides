@@ -31,9 +31,9 @@
 
             // Hacky: button links to slightly different url depending
             if(currentLoc.charAt(currentLoc.length - 1) === '/') {
-                 buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="advice/'+id+'#blockers">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="advice/'+id+'#warnings">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="advice/'+id+'"#tips>Tips: 0</a></li> </ul>';
+                 buttonContents = '<ul class="dropdown-menu intro_form_menu"><li ><a class="intro_form_warnings" href="advice/'+id+'#warnings">Questions</a></li><li ><a class="intro_form_blockers" href="advice/'+id+'#blockers"> Issues </a></li> <li ><a class="intro_form_tips" href="advice/'+id+'"#tips>Tips</a></li></ul>';
             } else {
-                 buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_blockers" href="'+gon.current_guide+'/advice/'+id+'#blockers">Blockers: 0</a></li> <li ><a class="intro_form_warnings" href="'+gon.current_guide+'/advice/'+id+'#warnings">Warnings: 0</a></li> <li ><a class="intro_form_tips" href="'+gon.current_guide+'/advice/'+id+'"#tips>Tips: 0</a></li> </ul>';
+                 buttonContents = '<ul class="dropdown-menu intro_form_menu"> <li ><a class="intro_form_warnings" href="'+gon.current_guide+'/advice/'+id+'#warnings">Questions</a></li><li ><a class="intro_form_blockers" href="'+gon.current_guide+'/advice/'+id+'#blockers"> Issues </a></li><li ><a class="intro_form_tips" href="'+gon.current_guide+'/advice/'+id+'"#tips> Tips </a></li> </ul>';
             }
 
 
