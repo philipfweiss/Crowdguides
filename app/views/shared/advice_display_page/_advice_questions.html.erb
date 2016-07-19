@@ -4,7 +4,9 @@
 
      <span>
         <h4 class="center">
-            <button class="question_button btn btn-sm btn-info"> Ask a Question! </button>
+            <%= params %>
+            <div><%= link_to "Ask a Question!", new_tidbit_path(:guide_id => params[:guide_id], :advice_id => params[:id]), class: "question_button btn btn-sm btn-info" %></div>
+
         </h4>
     </span>
 

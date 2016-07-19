@@ -13,13 +13,15 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   get 'index' => 'users'
   get 'new_guide' => 'guides#new'
+  get 'new_tidbit' => 'tidbits#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   root 'static_pages#home'
+
   resources :users
   resources :guides do
-    resources :advice do
-      resources :tidbits
-    end
+    resources :advice
   end
+  resources :tidbits
+
 end
