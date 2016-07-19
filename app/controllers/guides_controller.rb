@@ -22,7 +22,7 @@ class GuidesController < ApplicationController
         flash[:success] = "Guide created!"
       end
 
-      advices = @guide.content.scan(/\[\s?(\d{1,10})\s?]/)
+      advices = @guide.content.scan(/\[\s?(\d{1,10})\s?\]/)
       seen = Hash.new(0)
       advices.each do |x|
         if seen[x[0]] == 0
