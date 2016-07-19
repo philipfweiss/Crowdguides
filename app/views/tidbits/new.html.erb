@@ -2,14 +2,16 @@
 <div class="row">
     <h2 class="center">Enter a <%= @tidbit_type.capitalize %></h2>
 
-    <div class="col-md-6 col-md-offset-3 jumbotron padded_jumbo">
+    <div class="col-md-10 col-md-offset-1 jumbotron padded_jumbo">
 
         <%= form_for(@tidbit) do |f| %>
             <%= f.label :Question %>
             <%= f.text_field :title, class: 'form-control' %>
+            <div>
+                <%= f.label :Contents %>
+                <%= f.bootsy_area :contents, class: 'form-control', style: 'height: 200%' %>
+            </div>
 
-            <%= f.label :Contents %>
-            <%= f.text_area :contents, class: 'form-control' %>
 
             <%= f.hidden_field :issue_type,:value=> @tidbit_type %>
             <%= f.hidden_field :advice_id,:value=> @advice.id  %>

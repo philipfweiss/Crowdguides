@@ -29,6 +29,7 @@ class TidbitsController < ApplicationController
 
   def tidbit_params
     ## Can we make sure this doesn't break when another user tries to submit as someone else?
-    params.require(:tidbit).permit(:title, :contents, :issue_type, :advice_id, :user_id)
+    params.require(:tidbit).permit(:title, :contents, :issue_type, :advice_id, :user_id, :bootsy_image_gallery_id)
   end
 end
+:bootsy_image_gallery_id
