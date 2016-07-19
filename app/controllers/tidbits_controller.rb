@@ -7,7 +7,7 @@ class TidbitsController < ApplicationController
     session[:last_advice] = params[:advice_id]
 
     unless @tidbit_type == 'tip' || @tidbit_type == 'issue' || @tidbit_type == 'question'
-      redirect_to guide
+      redirect_to @guide
     end
 
 
