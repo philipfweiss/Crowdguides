@@ -10,9 +10,9 @@ class AdviceController < ApplicationController
     if @advice.nil?
       redirect_to @guide
     else
-      @blockers = @advice.tidbits.where(:issue_type => 'blocker').paginate(page: params[:page], :per_page => 10)
-      @warnings = @advice.tidbits.where(:issue_type => 'warning').paginate(page: params[:page], :per_page => 10)
-      @tips = @advice.tidbits.where(:issue_type => 'tip').paginate(page: params[:page], :per_page => 10)
+      @issues = @advice.tidbits.where(:issue_type => 'issue').paginate(page: params[:page], :per_page => 8)
+      @questions = @advice.tidbits.where(:issue_type => 'question').paginate(page: params[:page], :per_page => 8)
+      @tips = @advice.tidbits.where(:issue_type => 'tip').paginate(page: params[:page], :per_page => 8)
     end
   end
 

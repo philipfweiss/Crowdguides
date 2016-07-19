@@ -1,49 +1,49 @@
-<div id="issues" class="advice_blockers advice_container">
+<div id="issues" class="advice_issues advice_container">
     <h5 class="flexible_advice">
     </h5>
     <span>
         <h4 class="center">
-            <button class="blocker_button btn btn-sm btn-info"> Add an Issue </button>
+            <button class="issue_button btn btn-sm btn-info"> Add an Issue </button>
         </h4>
     </span>
 
 
-    <%= will_paginate @blockers%>
+    <%= will_paginate @issues%>
 
-    <% if @blockers.size == 0 %>
+    <% if @issues.size == 0 %>
         <div class="tidbit_wrapper">
             <div class="center empty_tidbit_box">
             </div>
         </div>
     <% end %>
 
-    <% @blockers.each do |blocker| %>
+    <% @issues.each do |issue| %>
         <div class="tidbit_wrapper">
             <div class="tidbit_box">
                 <div class="tidbit_flex">
                     <span class="vote-vote circle">
-                        <span class="vote-increment-blocker vote-up"></span>
-                        <span class="vote-increment-blocker vote-down"></span>
+                        <span class="vote-increment-issue vote-up"></span>
+                        <span class="vote-increment-issue vote-down"></span>
                         <span class="vote-count">1</span>
                     </span>
 
-                    <span class="advice_title"><%= link_to blocker.user.name, blocker.user %>  </span>
-                    <span class="advice_title"><%=blocker.title %></span>
+                    <span class="advice_title"><%= link_to issue.user.name, issue.user %>  </span>
+                    <span class="advice_title"><%=issue.title %></span>
                 </div>
             </div>
              <span class="centered advice_tidbit_information">
-                Created on <%= blocker.created_at.to_formatted_s(:long) %>
+                Created on <%= issue.created_at.to_formatted_s(:long) %>
             </span>
         </div>
         <% end %>
 
-    <%= will_paginate @blockers%>
+    <%= will_paginate @issues%>
 
 
     <script>
 //        This will not work in its current form
         $(function(){
-            $(".vote-increment-blocker").click(function(){
+            $(".vote-increment-issue").click(function(){
                 var count = parseInt($("~ .vote-count", this).text());
                 if($(this).hasClass("vote-up")) {
                     count = count + 1;

@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-
   root 'static_pages#home'
   resources :users
   resources :guides do

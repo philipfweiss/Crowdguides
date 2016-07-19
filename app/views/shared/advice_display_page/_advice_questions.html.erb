@@ -1,17 +1,17 @@
-<div id="questions" class="advice_warnings advice_container">
+<div id="questions" class="advice_questions advice_container">
     <h5 class="flexible_advice">
     </h5>
 
      <span>
         <h4 class="center">
-            <button class="warning_button btn btn-sm btn-info"> Ask a Question! </button>
+            <button class="question_button btn btn-sm btn-info"> Ask a Question! </button>
         </h4>
     </span>
 
 
-    <%= will_paginate @warnings%>
+    <%= will_paginate @questions%>
 
-    <% if @warnings.size == 0 %>
+    <% if @questions.size == 0 %>
         <div class="tidbit_wrapper">
             <div class="center empty_tidbit_box">
             </div>
@@ -19,33 +19,33 @@
     <% end %>
 
 
-    <% @warnings.each do |warning| %>
+    <% @questions.each do |question| %>
     <div class="tidbit_wrapper">
         <div class="tidbit_box">
             <div class="tidbit_flex">
                     <span class="vote-vote circle">
-                        <span class="vote-increment-warning vote-up"></span>
-                        <span class="vote-increment-warning vote-down"></span>
+                        <span class="vote-increment-question vote-up"></span>
+                        <span class="vote-increment-question vote-down"></span>
                         <span class="vote-count">1</span>
                     </span>
 
-                <span class="advice_title"><%= link_to warning.user.name, warning.user %>  </span>
-                <span class="advice_title"><%=warning.title %></span>
+                <span class="advice_title"><%= link_to question.user.name, question.user %>  </span>
+                <span class="advice_title"><%=question.title %></span>
             </div>
         </div>
         <span class="centered advice_tidbit_information">
-            Created on <%= warning.created_at.to_formatted_s(:long) %>
+            Created on <%= question.created_at.to_formatted_s(:long) %>
         </span>
     </div>
     <% end %>
 
-    <%= will_paginate @warnings%>
+    <%= will_paginate @questions%>
 
 
     <script>
         //        This will not work in its current form
         $(function(){
-            $(".vote-increment").click(function(){
+            $(".vote-increment-question").click(function(){
                 var count = parseInt($("~ .vote-count", this).text());
                 if($(this).hasClass("vote-up")) {
                     count = count + 1;

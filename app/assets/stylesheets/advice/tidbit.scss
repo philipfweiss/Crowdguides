@@ -27,12 +27,12 @@
 
 }
 
-.warning_button {
+.question_button {
   background-color: #fff8c8 !important;
   color: black !important;
 }
 
-.blocker_button {
+.issue_button {
   background-color: #ffced1 !important;
   color: black !important;
 
@@ -75,7 +75,7 @@ $red : #C15044;
   margin: 1rem;
 }
 
-.vote-increment-blocker {
+.vote-increment-issue {
   flex: 1 0 0;
   text-align: center;
   opacity: .5;
@@ -97,7 +97,7 @@ $red : #C15044;
   }
 }
 
-.vote-increment-warning {
+.vote-increment-question {
   flex: 1 0 0;
   text-align: center;
   opacity: .5;
