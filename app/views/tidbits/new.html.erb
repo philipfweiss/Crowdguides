@@ -1,6 +1,10 @@
 
 <div class="row">
-    <h2 class="center">Enter a <%= @tidbit_type.capitalize %></h2>
+    <% if @tidbit_type == 'question' || @tidbit_type == 'tip'%>
+        <h2 class="center">Enter a <%= @tidbit_type.capitalize %></h2>
+    <% elsif @tidbit_type == 'issue' %>
+        <h2 class="center">Enter an Issue</h2>
+<% end  %>
 
     <div class="col-md-10 col-md-offset-1 jumbotron padded_jumbo">
 

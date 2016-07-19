@@ -3,7 +3,8 @@
     </h5>
     <span>
         <h4 class="center">
-            <button class="issue_button btn btn-sm btn-info"> Add an Issue </button>
+            <div><%= link_to "Add an Issue", new_tidbit_path(:action => :post, :guide_id => params[:guide_id], :advice_id => params[:id], :tidbit_type => 'issue'), class: "issue_button btn btn-sm btn-info" %></div>
+
         </h4>
     </span>
 
@@ -26,8 +27,11 @@
                         <span class="vote-increment-issue vote-down"></span>
                         <span class="vote-count">1</span>
                     </span>
-
-                    <span class="advice_title"><%= link_to issue.user.name, issue.user %>  </span>
+                    <% if issue.user != nil %>
+                        <span class="advice_title"><%= link_to issue.user.name, issue.user %>  </span>
+                    <% else %>
+                        <span class="advice_title"><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
+                    <% end %>
                     <span class="advice_title"><%=issue.title %></span>
                 </div>
             </div>

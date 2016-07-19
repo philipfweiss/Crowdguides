@@ -4,7 +4,7 @@
 
      <span>
         <h4 class="center">
-            <div><%= link_to "Ask a Question!", new_tidbit_path(:action => :post, :guide_id => params[:guide_id], :advice_id => params[:id], :tidbit_type => 'question'), class: "question_button btn btn-sm btn-info" %></div>
+            <div><%= link_to "Ask a Question", new_tidbit_path(:action => :post, :guide_id => params[:guide_id], :advice_id => params[:id], :tidbit_type => 'question'), class: "question_button btn btn-sm btn-info" %></div>
 
         </h4>
     </span>
@@ -33,8 +33,7 @@
                     <span class="advice_title"><%= link_to question.user.name, question.user %>  </span>
                 <% else %>
                     <span class="advice_title"><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
-
-            <% end %>
+                <% end %>
                 <span class="advice_title"><%=question.title %></span>
             </div>
         </div>
