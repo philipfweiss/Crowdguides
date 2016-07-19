@@ -1,0 +1,24 @@
+<% provide(:title, @tidbit.title) %>
+<div class="breadcrumbs">
+     <span><%= link_to "#{@guide.title}", "/guides/#{@guide.id}" %></span>
+    <
+    <span><%= link_to "Advice Portal #{@advice.inner_guide_id}", "/guides/#{@guide.id}/advice/#{@advice.inner_guide_id}" %></span>
+    <
+    <span><%= "#{@tidbit.title}"%></span>
+
+</div>
+
+
+
+<div class="tidbit_whole_wrapper">
+
+    <% if @author.is_a? String %>
+        <div> <%= link_to @author, "/guides/#{@guide.id}/advice/#{@advice.inner_guide_id}" %> Asks: </div>
+
+<% else %>
+        <div> <%= link_to @author.name %> Asks: </div>
+    <% end %>
+
+    <h4><%= @tidbit.title %> </h4>
+    <span> <%= @tidbit.contents %></span>
+</div>

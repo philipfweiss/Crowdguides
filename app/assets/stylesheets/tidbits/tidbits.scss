@@ -1,3 +1,10 @@
 // Place all the styles related to the Tidbits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tidbit_whole_wrapper {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #f4efff;
+  padding: 20px;
+}

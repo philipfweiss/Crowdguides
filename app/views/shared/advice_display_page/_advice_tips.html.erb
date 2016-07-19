@@ -33,7 +33,7 @@
                 <% else %>
                     <span class="advice_title"><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
                 <% end %>
-                <span class="advice_title"><%=tip.title %></span>
+                <span class="advice_title"> <%=link_to tip.title, "/tidbits/#{tip.id}" %> </span>
 
             </div>
             <span class="centered advice_tidbit_information">

@@ -34,7 +34,7 @@
                 <% else %>
                     <span class="advice_title"><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
                 <% end %>
-                <span class="advice_title"><%=question.title %></span>
+                <span class="advice_title"> <%=link_to question.title, "/tidbits/#{question.id}" %> </span>
             </div>
         </div>
         <span class="centered advice_tidbit_information">

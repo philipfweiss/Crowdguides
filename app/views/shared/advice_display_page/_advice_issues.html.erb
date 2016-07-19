@@ -19,26 +19,26 @@
     <% end %>
 
     <% @issues.each do |issue| %>
-        <div class="tidbit_wrapper">
+            <div class="tidbit_wrapper">
             <div class="tidbit_box">
-                <div class="tidbit_flex">
-                    <span class="vote-vote circle">
-                        <span class="vote-increment-issue vote-up"></span>
-                        <span class="vote-increment-issue vote-down"></span>
-                        <span class="vote-count">1</span>
-                    </span>
-                    <% if issue.user != nil %>
-                        <span class="advice_title"><%= link_to issue.user.name, issue.user %>  </span>
-                    <% else %>
-                        <span class="advice_title"><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
-                    <% end %>
-                    <span class="advice_title"><%=issue.title %></span>
+                    <div class="tidbit_flex">
+                        <span class="vote-vote circle">
+                            <span class="vote-increment-issue vote-up"></span>
+                            <span class="vote-increment-issue vote-down"></span>
+                            <span class="vote-count">1</span>
+                        </span>
+                        <% if issue.user != nil %>
+                            <span class="advice_title"><%= link_to issue.user.name, issue.user %>  </span>
+                        <% else %>
+                            <span class="advice_title"><%= link_to "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize, @guide.title%>  </span>
+                        <% end %>
+                        <span class="advice_title"> <%=link_to issue.title, "/tidbits/#{issue.id}" %> </span>
+                    </div>
                 </div>
+                 <span class="centered advice_tidbit_information">
+                    Created on <%= issue.created_at.to_formatted_s(:long) %>
+                </span>
             </div>
-             <span class="centered advice_tidbit_information">
-                Created on <%= issue.created_at.to_formatted_s(:long) %>
-            </span>
-        </div>
         <% end %>
 
     <%= will_paginate @issues%>

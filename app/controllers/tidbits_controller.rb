@@ -15,14 +15,25 @@ class TidbitsController < ApplicationController
   end
 
   def create
-
     @tidbit = Tidbit.new(tidbit_params)
     if @tidbit.save
       flash[:success] = "You Successfully Submitted Your Question"
     end
 
     redirect_to "/guides/#{session[:last_guide]}/advice/#{session[:last_advice]}"
+  end
 
+  def show
+    @tidbit = Tidbit.find(params[:id])
+    @advice = Advice.find(@tidbit.advice_id)
+    @guide = Guide.find(@advice.guide_id)
+
+
+    if @tidbit.user_id != nil
+      @author = User.find(@tidbit.user_id)
+    else
+      @author = "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize
+    end
   end
 
   private
