@@ -1,7 +1,16 @@
 <div>
-    Guide Id: <%= @guide_id%>
-    Advice Id: <%= @advice_id%>
-    Tidbit Type: <%= @tidbit_type %>
+    <h5>
+        Adding Tidbit For: <%= @guide.title %>
+    </h5>
+
+    <h5>
+        Tidbit Type: <%= @advice.id %>
+    </h5>
+
+    <h5>
+        Tidbit Type: <%= @tidbit_type %>
+    </h5>
+
 
 </div>
 
@@ -16,6 +25,15 @@
 
             <%= f.label :Contents %>
             <%= f.text_area :contents, class: 'form-control' %>
+
+            <%= f.hidden_field :issue_type,:value=> @tidbit_type %>
+            <%= f.hidden_field :advice_id,:value=> @advice.id  %>
+            <%= f.hidden_field :user_id,:value=> current_user.id %>
+
+
+
+
+
 
             <%= f.submit "Submit", class: "btn btn-primary" %>
         <% end %>
