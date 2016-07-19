@@ -9,16 +9,55 @@
 </div>
 
 
-
 <div class="tidbit_whole_wrapper">
 
-    <% if @author.is_a? String %>
-        <div> <%= link_to @author, "/guides/#{@guide.id}/advice/#{@advice.inner_guide_id}" %> Asks: </div>
+    <div class="tidbit_box">
+        <div class="tidbit_flex">
+        <span class="vote-vote circle">
+            <span class="vote-increment-onpage vote-up"></span>
+            <span class="vote-increment-onpage vote-down"></span>
+            <span class="vote-count">1</span>
+        </span>
+        </div>
+    </div>
+    <div>
+        <h4 class="tidbit_title"><%= @tidbit.title %> </h4>
+        <span> <%= @tidbit.contents %></span>
 
-<% else %>
-        <div> <%= link_to @author.name %> Asks: </div>
-    <% end %>
+        <div class="tidbit_tidbit_information">
+            Posted on <%= @tidbit.created_at.to_formatted_s(:long) %> by
+            <% if @author.is_a? String %>
+                <span> <%= link_to @author, "/guides/#{@guide.id}/advice/#{@advice.inner_guide_id}" %> </span>
+            <% else %>
+                <span> <%= link_to @author.name %> Asks: </span>
+            <% end %>
+        </div>
+    </div>
 
-    <h4><%= @tidbit.title %> </h4>
-    <span> <%= @tidbit.contents %></span>
+    <script>
+        //        This will not work in its current form
+        $(function(){
+            $(".vote-increment-onpage").click(function(){
+                var count = parseInt($("~ .vote-count", this).text());
+                if($(this).hasClass("vote-up")) {
+                    count = count + 1;
+
+                    $("~ .vote-count", this).text(count);
+                } else {
+                    count = count - 1;
+                    $("~ .vote-count", this).text(count);
+                }
+
+                $(this).parent().addClass("vote-bump");
+
+                setTimeout(function(){
+                    $(this).parent().removeClass("vote-bump");
+                }, 400);
+            });
+        });
+    </script>
+
+
+
+
 </div>

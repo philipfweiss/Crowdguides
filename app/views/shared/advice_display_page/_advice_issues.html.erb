@@ -30,7 +30,8 @@
 
                         <span class="advice_title advice_big_font"> <%=link_to issue.title, "/tidbits/#{issue.id}" %> </span>
                     </div>
-                </div>
+            </div>
+
                  <span class="centered advice_tidbit_information">
                     Created on <%= issue.created_at.to_formatted_s(:long) %>  by
                         <% if issue.user != nil %>

@@ -75,6 +75,28 @@ $red : #C15044;
   margin: 1rem;
 }
 
+.vote-increment-onpage {
+  flex: 1 0 0;
+  text-align: center;
+  opacity: .5;
+  transition: $transition;
+  cursor: pointer;
+
+  &.vote-up {
+    background: $green;
+    height: 50%;
+    margin-bottom: $border-width/2;
+  }
+  &.vote-down {
+    background: $red;
+    height: 50%;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .vote-increment-issue {
   flex: 1 0 0;
   text-align: center;

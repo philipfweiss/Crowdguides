@@ -32,7 +32,7 @@ class TidbitsController < ApplicationController
     if @tidbit.user_id != nil
       @author = User.find(@tidbit.user_id)
     else
-      @author = "(Anon) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize
+      @author = "(Anonymous) " + Faker::Color.color_name.capitalize + " " + Faker::Hipster.words[0].capitalize
     end
   end
 
