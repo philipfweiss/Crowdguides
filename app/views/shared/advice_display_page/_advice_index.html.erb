@@ -1,23 +1,25 @@
-<div class="tidbit_whole_wrapper">
+<div class="single_tidbit_index_wrapper">
     <div class="tidbit_box">
         <div class="tidbit_flex">
-        <span class="vote-vote circle">
-            <span class="vote-increment-onpage vote-up"></span>
-            <span class="vote-increment-onpage vote-down"></span>
-            <span class="vote-count">1</span>
-        </span>
-        </div>
-    </div>
-    <div>
-        <h4 class="tidbit_title"><%= locals[:tidbit].title %> </h4>
-        <span> <%= locals[:tidbit].contents %></span>
+            <span class="vote-vote circle">
+                <span class="vote-increment-onpage vote-up"></span>
+                <span class="vote-increment-onpage vote-down"></span>
+                <span class="vote-count">1</span>
+            </span>
+            <div>
+                <h4 class="tidbit_title"><%= locals[:tidbit].title %> </h4>
+                <span> <%= locals[:tidbit].contents %></span>
 
-        <div class="tidbit_tidbit_information">
-            Posted on <%= locals[:tidbit].created_at.to_formatted_s(:long) %> by
-            <%= link_to get_username(locals[:tidbit].user_id), user_link(locals[:tidbit].user_id) %>
+                <div class="tidbit_tidbit_information">
+                    Posted on <%= locals[:tidbit].created_at.to_formatted_s(:long) %> by
+                    <%= link_to get_username(locals[:tidbit].user_id), user_link(locals[:tidbit].user_id) %>
 
+                </div>
+            </div>
         </div>
+
     </div>
+
 
     <script>
         //        This will not work in its current form

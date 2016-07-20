@@ -1,16 +1,58 @@
 <% provide(:title, 'Advice Portals') %>
 
-<% @questions.each do |question| %>
-    <%= render 'shared/advice_display_page/advice_index.html.erb', locals: {:tidbit => question}%>
-<% end %>
+<div class="tidbit_index_wrapper">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index_questions">Questions</a></li>
+        <li><a data-toggle="tab" href="#index_issues">Issue</a></li>
+        <li><a data-toggle="tab" href="#index_tips">Tips</a></li>
+    </ul>
 
-<% @issues.each do |issue| %>
-    <%= render 'shared/advice_display_page/advice_index.html.erb', locals: {:tidbit => issue}%>
+    <div class="tab-content">
+        <div id="index_questions" class="tab-pane fade in active">
+            <% if @questions.any? %>
+                <% @questions.each do |question| %>
+                    <%= render 'shared/advice_display_page/advice_index.html.erb', locals: {:tidbit => question}%>
+                <% end %>
+            <% else %>
+                <div class="center very_padded">
+                    No questions have been asked yet!
+                </div>
+            <% end %>
 
-<% end %>
+        </div>
 
-<% @tips.each do |tip| %>
-    <%= render 'shared/advice_display_page/advice_index.html.erb', locals: {:tidbit => tip}%>
-<% end %>
+        <div id="index_issues" class="tab-pane fade">
+            <% if @issues.any?%>
+                <% @issues.each do |issue| %>
+                    <%= render 'shared/advice_display_page/advice_index.html.erb', locals: {:tidbit => issue}%>
+
+                <% end %>
+            <% else %>
+                <div class="center very_padded">
+                    No issues have been added yet!
+                </div>
+            <% end %>
+
+        </div>
+
+        <div id="index_tips" class="tab-pane fade">
+            <% if @tips.any?%>
+                <% @tips.each do |tip| %>
+                    <%= render 'shared/advice_display_page/advice_index.html.erb', locals: {:tidbit => tip}%>
+                <% end %>
+            <% else %>
+                <div class="center very_padded">
+                    No tips have been added yet!
+                </div>
+            <% end %>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
 
 

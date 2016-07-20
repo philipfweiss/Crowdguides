@@ -9,6 +9,19 @@
   padding: 20px;
   display: flex;
 }
+
+.tidbit_index_wrapper {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+
+}
+
+.single_tidbit_index_wrapper {
+  background-color: #fbf8ff;
+  margin: 20px;
+}
+
 .tidbit_tidbit_information {
   margin-top: 20px;
   font-size: 10px;
@@ -16,4 +29,8 @@
 
 .tidbit_title {
   padding-bottom: 10px;
+}
+
+.very_padded {
+  padding: 30px;
 }
