@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 
 /* mixins, variables, etc. */
 
@@ -75,11 +77,10 @@ p {
 
 #logo {
   float: left;
-  font-family: ‘Lucida Console’, Monaco, monospace;
+  font-family: ‘Open Sans’, sans-serif, monospace;
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
 }
@@ -221,8 +222,9 @@ input {
 }
 
 #shepherd_main {
-
-  font-family: ‘Lucida Console’, Monaco, monospace;
+  color: white;
+  text-shadow: 2px 2px black;
+  font-family: ‘Open Sans’, sans-serif, monospace;
 }
 
 #second_button {
@@ -232,6 +234,8 @@ input {
   border: 1px solid black;
   background: image-url("pattern.svg");
 }
+
+
 .padded {
   padding: 10px;
 }

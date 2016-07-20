@@ -1,46 +1,30 @@
 <div class="single_tidbit_index_wrapper">
+
     <div class="tidbit_box">
-        <div class="tidbit_flex">
-            <span class="vote-vote circle">
-                <span class="vote-increment-onpage vote-up"></span>
-                <span class="vote-increment-onpage vote-down"></span>
-                <span class="vote-count">1</span>
-            </span>
-            <div>
-                <h5 class="tidbit_title_index"><%= locals[:tidbit].title %> </h5>
-                <span> <%= locals[:tidbit].contents %></span>
+        <div class="tidbit_flex padded" >
+
+            <div class="tidbit_box">
+                <div class="tidbit_flex">
+                    <span class="vote-vote circle">
+                        <span class="vote-increment-issue vote-up"></span>
+                        <span class="vote-increment-issue vote-down"></span>
+                        <span class="vote-count">1</span>
+                    </span>
+
+                    <h5 class="tidbit_title_index">
+                        <%= link_to locals[:tidbit].title, "/tidbits/#{locals[:tidbit].id}" %>
+                    </h5>
+                </div>
 
                 <div class="tidbit_tidbit_information">
                     Posted on <%= locals[:tidbit].created_at.to_formatted_s(:long) %> by
-                    <%= link_to get_username(locals[:tidbit].user_id), user_link(locals[:tidbit].user_id) %>
-
+                    <%= link_to get_username(locals[:tidbit].user_id), user_link(locals[:tidbit].user_id) %> in
+                    <%= link_to  "Portal #{locals[:tidbit].advice_id}", "/guides/#{@guide.id}/advice/#{locals[:tidbit].advice_id}"%>
                 </div>
             </div>
+
         </div>
 
     </div>
 
-
-    <script>
-        //        This will not work in its current form
-        $(function(){
-            $(".vote-increment-onpage").click(function(){
-                var count = parseInt($("~ .vote-count", this).text());
-                if($(this).hasClass("vote-up")) {
-                    count = count + 1;
-
-                    $("~ .vote-count", this).text(count);
-                } else {
-                    count = count - 1;
-                    $("~ .vote-count", this).text(count);
-                }
-
-                $(this).parent().addClass("vote-bump");
-
-                setTimeout(function(){
-                    $(this).parent().removeClass("vote-bump");
-                }, 400);
-            });
-        });
-    </script>
 </div>
