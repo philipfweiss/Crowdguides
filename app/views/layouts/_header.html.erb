@@ -1,7 +1,11 @@
 <header class="header-color navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Crowdguides", root_path, id: "logo" %>
-    <nav>
+      <div>
+
+          <%= link_to image_tag("shepherd.png", :size => '30x30') + " Shepherd", root_path, id: "logo" %>
+      </div>
+
+      <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>

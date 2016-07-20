@@ -1,19 +1,24 @@
 <% provide(:title, 'Home') %>
 
 <div class="center jumbotron" id="homepage_jumbo">
-    <h1 id="crowdguides_main">Crowdguides</h1>
-    <h2>
-      <h5>
-          Using the crowd to help provide advice in context
-      </h5>
-  </h2>
-    <div><%= link_to "Create a new guide", new_guide_path, id: "create_new_guide", class: "btn btn-lg btn-primary" %></div>
+    <div>
+        <h1 id="shepherd_main">
+            <%= image_tag("shepherd.png", :alt => "Shepherd Staff", :size => '80x80') %>
+            Shepherd
+            <%= image_tag("shepherd.png", :alt => "Shepherd Staff", :size => '80x80') %>
+        </h1>
+    </div>
 
-    <% if logged_in?%>
-        <div id="second_button">
-            <%= link_to "Your Profile", @current_user, class: "btn btn-sml btn-info"%>
-        </div>
-    <% else %>
+      <h4>
+          Using the Crowd to Help Improve Guides
+      </h4>
+    <br>
+
+    <div>
+        <%= link_to "Create a New Guide", new_guide_path, id: "create_new_guide", class: "btn btn-lg btn-primary" %>
+    </div>
+
+    <% if !logged_in?%>
         <div id="second_button">
             <%= link_to "Or sign up for access to more tools!", signup_path, class: "btn btn-sml btn-info"%>
         </div>
