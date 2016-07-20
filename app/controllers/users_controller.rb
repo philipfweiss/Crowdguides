@@ -16,8 +16,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @tidbits = @user.tidbits.paginate(page: params[:page], :per_page => 6)
-    @guides = @user.guides.paginate(page: params[:page], :per_page => 6)
+    @tidbits = @user.tidbits.paginate(page: params[:tidbit_page], :per_page => 6)
+    @guides = @user.guides.paginate(page: params[:guide_page], :per_page => 6)
 
   end
 
