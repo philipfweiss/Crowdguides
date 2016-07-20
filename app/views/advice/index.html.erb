@@ -1,4 +1,16 @@
 <% provide(:title, 'Advice Portals') %>
 
-<h1>Advice#index</h1>
-<p>Find me in app/views/advice/index.html.erb</p>
+<% @questions.each do |question| %>
+    <div>Questions: <%=  question.title %></div>
+<% end %>
+
+<% @issues.each do |issue| %>
+    <div> Issue: <%= issue.title %></div>
+
+<% end %>
+
+<% @tips.each do |tip| %>
+    <div> TIp: <%= tip.title %></div>
+<% end %>
+
+
