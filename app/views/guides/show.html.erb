@@ -1,8 +1,17 @@
 <%= include_gon %>
+<div style="padding-top: 20px">
+    <%= render 'shared/tidbits_shared/advice_index_button' %>
+</div>
+
 <div class="breadcrumbs"><%= @guide.title %></div>
 
-<div class="show_guide_wrapper" id="guide_content">
+<div class="show_guide_wrapper">
+    <div id="guide_content">
+    </div>
+    <%= render 'shared/tidbits_shared/advice_index_button' %>
+
 </div>
+
 
 <div class="guide_owner_info" id="guide_info">
     <% if @owner.nil? %>

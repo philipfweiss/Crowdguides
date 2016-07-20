@@ -1,14 +1,3 @@
-<% provide(:title, @tidbit.title) %>
-<div class="breadcrumbs">
-     <span><%= link_to "#{@guide.title}", "/guides/#{@guide.id}" %></span>
-    <
-    <span><%= link_to "Advice Portal #{@advice.inner_guide_id}", "/guides/#{@guide.id}/advice/#{@advice.inner_guide_id}" %></span>
-    <
-    <span><%= "#{@tidbit.title}"%></span>
-
-</div>
-
-
 <div class="tidbit_whole_wrapper">
     <div class="tidbit_box">
         <div class="tidbit_flex">
@@ -20,16 +9,13 @@
         </div>
     </div>
     <div>
-        <h4 class="tidbit_title"><%= @tidbit.title %> </h4>
-        <span> <%= @tidbit.contents %></span>
+        <h4 class="tidbit_title"><%= locals[:tidbit].title %> </h4>
+        <span> <%= locals[:tidbit].contents %></span>
 
         <div class="tidbit_tidbit_information">
-            Posted on <%= @tidbit.created_at.to_formatted_s(:long) %> by
-            <% if @author.is_a? String %>
-                <span> <%= link_to @author, "/guides/#{@guide.id}/advice/#{@advice.inner_guide_id}" %> </span>
-            <% else %>
-                <span> <%= link_to @author.name %>  </span>
-            <% end %>
+            Posted on <%= locals[:tidbit].created_at.to_formatted_s(:long) %> by
+            <%= link_to get_username(locals[:tidbit].user_id), user_link(locals[:tidbit].user_id) %>
+
         </div>
     </div>
 

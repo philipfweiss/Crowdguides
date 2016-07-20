@@ -1,6 +1,4 @@
 class AdviceController < ApplicationController
-  def index
-  end
 
   def show
     @guide = Guide.find(params[:guide_id])
@@ -22,6 +20,7 @@ class AdviceController < ApplicationController
   end
 
   def index
+    @guide = Guide.find(params[:guide_id])
     advices = Guide.find(params[:guide_id]).advices
     if advices.nil?
       redirect_to @guide
@@ -38,7 +37,7 @@ class AdviceController < ApplicationController
     end
   end
 
-
+  private
 
 
 end

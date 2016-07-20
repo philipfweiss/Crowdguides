@@ -1,16 +1,16 @@
 <% provide(:title, 'Advice Portals') %>
 
 <% @questions.each do |question| %>
-    <div>Questions: <%=  question.title %></div>
+    <%= render 'shared/advice_display_page/advice_index.html.erb', locals: {:tidbit => question}%>
 <% end %>
 
 <% @issues.each do |issue| %>
-    <div> Issue: <%= issue.title %></div>
+    <%= render 'shared/advice_display_page/advice_index.html.erb', locals: {:tidbit => issue}%>
 
 <% end %>
 
 <% @tips.each do |tip| %>
-    <div> TIp: <%= tip.title %></div>
+    <%= render 'shared/advice_display_page/advice_index.html.erb', locals: {:tidbit => tip}%>
 <% end %>
 
 
