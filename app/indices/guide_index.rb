@@ -1,8 +1,7 @@
 ThinkingSphinx::Index.define :guide, :with => :real_time do
   # fields
   indexes title, :sortable => true
-  indexes content
-  indexes name
+  indexes content, :sortable => true
 
   # attributes
   has user_id,  :type => :integer
