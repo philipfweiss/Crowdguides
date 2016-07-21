@@ -7,8 +7,8 @@ class Guide < ActiveRecord::Base
   after_save ThinkingSphinx::RealTime.callback_for(:article)
 
 
-  def self.search(search)
-    where("title LIKE ?", "%#{search}%")
-    where("content LIKE ?", "%#{search}%")
-  end
+  # def self.search(search)
+  #   where("title LIKE ?", "%#{search}%")
+  #   where("content LIKE ?", "%#{search}%")
+  # end
 end

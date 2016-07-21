@@ -26,7 +26,7 @@
 
     <div>
         <%= form_tag(guides_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Guides...", class: "search_box_header" %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Guides - (Indexed With Thinking Sphinx)", class: "search_box_header" %>
             <%= submit_tag "Search", style: "display: none;" %>
         <% end %>
     </div>

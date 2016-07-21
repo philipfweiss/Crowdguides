@@ -41,9 +41,11 @@ class GuidesController < ApplicationController
   end
 
   def index
+
     @guides = Guide.paginate(page: params[:page], :per_page => 5)
     if params[:search]
-      @guides = Guide.search(params[:search]).order("created_at DESC").paginate(page: params[:page], :per_page => 5)
+      guides = Guide.search ThinkingSphinx::Query.escape(params[:search])
+      @guides = Guide.where(:id => guides).paginate(page: params[:page], :per_page => 5)
     else
       @guides = Guide.all.order('created_at DESC').paginate(page: params[:page], :per_page => 5)
 
