@@ -42,6 +42,12 @@ class GuidesController < ApplicationController
 
   def index
     @guides = Guide.paginate(page: params[:page], :per_page => 5)
+    if params[:search]
+      @guides = Guide.search(params[:search]).order("created_at DESC").paginate(page: params[:page], :per_page => 5)
+    else
+      @guides = Guide.all.order('created_at DESC').paginate(page: params[:page], :per_page => 5)
+
+    end
   end
 
   def show

@@ -16,6 +16,9 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'gon'
+gem 'mysql2',          '~> 0.3.18', :platform => :ruby
+gem 'jdbc-mysql',      '= 5.1.35', :platform => :jruby
+gem 'thinking-sphinx', '~> 3.2.0'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'jbuilder'

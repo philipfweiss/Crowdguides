@@ -2,7 +2,15 @@
 
 <h1 class="center">All Guides</h1>
 
-<%= will_paginate %>
+
+
+
+<%= form_tag(guides_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Guides" %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<%= will_paginate @guides %>
 
 <div class="guide_index">
     <% @guides.each do |guide| %>
@@ -18,4 +26,4 @@
     <% end %>
 </div>
 
-<%= will_paginate %>
+<%= will_paginate @guides %>
