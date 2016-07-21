@@ -9,6 +9,12 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
+          <li>
+              <%= form_tag(guides_path, :method => "get", id: "search-form") do %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Search Guides", class: "search_box_header" %>
+                  <%= submit_tag "Search", style: "display: none;" %>
+              <% end %>
+          </li>
         <% if logged_in? %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
