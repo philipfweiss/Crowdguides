@@ -212,13 +212,22 @@ input {
 
 #homepage_jumbo {
   border-style: solid;
+  height: 500px;
   border-width: 2px 10px 4px 20px;
-  background: image-url("pattern.svg");
+  //background: image-url("shepherd.jpg");
+  //background-repeat: no-repeat;
+  //background-width: 100%;
+  background: url("shepherd.jpg") left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 }
 
 #body_main {
-  background: image-url("download-min.png");
+  background: image-url("download-min.png") rgba(163, 163, 163, 0.4);
+
 }
 
 #shepherd_main {
@@ -254,4 +263,22 @@ input {
   text-align: center;
   padding: 5px;
   border: 1px solid black;
+}
+
+.third {
+}
+
+.home_third {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 100px;
+  display: flex;
+  align-content: center;
+}
+
+.homejumb {
+  width: auto;
+  display: block;
+
+  background: rgba(163, 163, 163, 0.4);
 }

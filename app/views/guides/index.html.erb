@@ -1,25 +1,33 @@
 <% provide(:title, 'All users') %>
 
 <h1 class="center">All Guides</h1>
-<div>
-    <%= form_tag(guides_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Guides...", class: "search_box_header" %>
-        <%= submit_tag "Search", style: "display: none;" %>
-    <% end %>
-</div>
+<!--<div>-->
+    <!--<%= form_tag(guides_path, :method => "get", id: "search-form") do %>-->
+        <!--<%= text_field_tag :search, params[:search], placeholder: "Search Guides...", class: "search_box_header" %>-->
+        <!--<%= submit_tag "Search", style: "display: none;" %>-->
+    <!--<% end %>-->
+<!--</div>-->
 
 <%= will_paginate @guides %>
 
-<div class="guide_index">
+<div class="guide_search_results_wrapper">
     <% @guides.each do |guide| %>
         <div class="each_guide">
-            <h4>
-                <%= guide.id %>
-                <%= link_to guide.title, guide  %>
-            </h4>
-            <div>
-                <%= guide.description %>
+            <div class="tidbit_flex">
+                <span class="vote-vote circle">
+                    <span class="vote-increment-issue vote-up"></span>
+                    <span class="vote-increment-issue vote-down"></span>
+                    <span class="vote-count">1</span>
+                </span>
+                <span>
+                    <%= link_to guide.title, guide  %>
+                </span>
             </div>
+            <div class="guide_search_tiny_font">
+                Written by <%= link_to find_user_name(guide.user_id), find_user(guide.user_id)  %>
+                - Last updated on <%= guide.updated_at.strftime("%B %d, %Y") %>
+            </div>
+
         </div>
     <% end %>
 </div>

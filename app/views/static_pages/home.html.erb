@@ -1,39 +1,33 @@
 <% provide(:title, 'Home') %>
 
-<div class="center jumbotron" id="homepage_jumbo">
+<div class="container center jumbotron" id="homepage_jumbo">
     <div>
+
+    </div>
+    <div class="jumbotron homejumb">
         <h1 id="shepherd_main">
-            <%= image_tag("shepherd.png", :alt => "Shepherd Staff", :size => '80x80') %>
             Shepherd
-            <%= image_tag("shepherd.png", :alt => "Shepherd Staff", :size => '80x80') %>
         </h1>
-    </div>
+        <h4 style="color: white;  text-shadow: 2px 2px black;">
+            Using the Crowd to Help Improve Guides
+        </h4>
+        <br>
 
-      <h4>
-          Using the Crowd to Help Improve Guides
-      </h4>
-    <br>
-
-    <div>
-        <%= link_to "Create a New Guide", new_guide_path, id: "create_new_guide", class: "btn btn-lg btn-primary" %>
-    </div>
-
-    <% if !logged_in?%>
-        <div id="second_button">
-            <%= link_to "Or sign up for access to more tools!", signup_path, class: "btn btn-sml btn-info"%>
+        <div>
+            <%= link_to "Create a New Guide", new_guide_path, id: "create_new_guide", class: "btn btn-lg btn-primary", style: "border: 1px solid black;" %>
         </div>
-    <% end %>
 
-    <div>
-        <%= form_tag(guides_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Guides - (Indexed With Thinking Sphinx)", class: "search_box_header" %>
-            <%= submit_tag "Search", style: "display: none;" %>
+        <% if !logged_in?%>
+            <div id="second_button">
+                <%= link_to "Or sign up for access to more tools!", signup_path, class: "btn btn-sml btn-info", style: "border: 1px solid black;"%>
+            </div>
         <% end %>
+        <div>
+            <a href="/guides" style="color: white;"> Check out some sample guides here!</a>
+        </div>
     </div>
 
-    <div>
 
-    </div>
 
 </div>
 
