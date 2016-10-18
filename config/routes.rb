@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'new_tidbit' => 'tidbits#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  root 'static_pages#home'
+  root 'guides#new'
 
   resources :users
   resources :guides do
